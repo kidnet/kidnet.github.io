@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Tue Sep 19 2017 18:04:08 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Sep 19 2017 18:07:14 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Sep 19 2017 18:19:44 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://kidnet.github.io/2017/09/19/docker-install/index.html",
     "headline": "Docker系列(一)--安装",
     "datePublished": "Tue Sep 19 2017 18:04:08 GMT+0800",
-    "dateModified": "Tue Sep 19 2017 18:07:14 GMT+0800",
+    "dateModified": "Tue Sep 19 2017 18:19:44 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jason",
@@ -519,21 +519,21 @@
 <h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装:"></a>yum安装:</h2><h3 id="安装docker源"><a href="#安装docker源" class="headerlink" title="安装docker源"></a>安装docker源</h3><p>使用yum安装doucker之前，需要先设置docker的yum源。</p>
 <h4 id="设置源"><a href="#设置源" class="headerlink" title="设置源"></a>设置源</h4><ol>
 <li><p>安装源需要的包: <code>yum-utils</code>, <code>yum-config-manager</code>, <code>device-mapper-persistent-data</code>, <code>lvm21</code>及<code>devicemapper</code>  </p>
-<p> $ yum install -y yum-utils \<br> device-mapper-persistent-data \<br> lvm2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ yum install -y yum-utils \  </div><div class="line">device-mapper-persistent-data \  </div><div class="line">lvm2</div></pre></td></tr></table></figure>
 </li>
 <li><p>安装docker源</p>
-<p> $ yum-config-manager \<br> –add-repo \<br> <a href="https://download.docker.com/linux/centos/docker-ce.repo" target="_blank" rel="external">https://download.docker.com/linux/centos/docker-ce.repo</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ yum-config-manager \  </div><div class="line">--add-repo \  </div><div class="line">https://download.docker.com/linux/centos/docker-ce.repo</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h4><ol>
 <li><p>安装最新版本docker  </p>
-<p> $ yum install docker-ce</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yum install docker-ce</div></pre></td></tr></table></figure>
 </li>
 <li><p>启动docker  </p>
-<p> $ systemctl start docker</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ systemctl start docker</div></pre></td></tr></table></figure>
 </li>
 <li><p>验证docker是否安装正确</p>
-<p> $ docker run hello-world</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run hello-world</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="二进制包安装"><a href="#二进制包安装" class="headerlink" title="二进制包安装"></a>二进制包安装</h2><h3 id="安装静态二进制"><a href="#安装静态二进制" class="headerlink" title="安装静态二进制"></a>安装静态二进制</h3><ol>
@@ -541,17 +541,16 @@
 </ol>
 <ol>
 <li><p>解压缩tar包  </p>
-<p> $ tar -xzvf /path/to/<file>.tar.gz</file></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar -xzvf /path/to/&lt;FILE&gt;.tar.gz</div></pre></td></tr></table></figure>
 </li>
 <li><p>将二进制文件拷贝至系统命令目录，如<code>/usr/bin</code>  </p>
-<p> $ cp docker/* /usr/bin/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cp docker/* /usr/bin/</div></pre></td></tr></table></figure>
 </li>
 <li><p>启动Docker daemon:</p>
-<p> $ dockerd &amp;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ dockerd &amp;</div></pre></td></tr></table></figure>
 </li>
 <li><p>验证docker是否安装正确</p>
-<p> $ docker run hello-world</p>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run hello-world</div></pre></td></tr></table></figure></li>
 </ol>
 
         
