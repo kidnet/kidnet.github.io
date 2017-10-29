@@ -39,7 +39,7 @@
     
     <title>
         
-            带有超时设置的subprocess | 
+            Docker系列(二)--镜像管理 | 
         
         Jason
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jason">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",Python">
+    <meta name="keywords" content=",docker">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -237,18 +237,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://kidnet.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="带有超时设置的subprocess | Jason">
+    <meta property="og:title" content="Docker系列(二)--镜像管理 | Jason">
     <meta property="og:image" content="http://kidnet.github.io/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Python"> 
+    <meta property="og:article:tag" content="docker"> 
 
     
-        <meta property="article:published_time" content="Fri Sep 08 2017 15:50:36 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Sep 13 2017 09:54:54 GMT+0800" />
+        <meta property="article:published_time" content="Sun Oct 29 2017 15:32:20 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Oct 29 2017 17:40:42 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="带有超时设置的subprocess | Jason">
+    <meta name="twitter:title" content="Docker系列(二)--镜像管理 | Jason">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://kidnet.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -256,7 +256,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html" />
+        <link rel="canonical" href="http://kidnet.github.io/2017/10/29/docker-image-management/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -268,10 +268,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html",
-    "headline": "带有超时设置的subprocess",
-    "datePublished": "Fri Sep 08 2017 15:50:36 GMT+0800",
-    "dateModified": "Wed Sep 13 2017 09:54:54 GMT+0800",
+    "mainEntityOfPage": "http://kidnet.github.io/2017/10/29/docker-image-management/index.html",
+    "headline": "Docker系列(二)--镜像管理",
+    "datePublished": "Sun Oct 29 2017 15:32:20 GMT+0800",
+    "dateModified": "Sun Oct 29 2017 17:40:42 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jason",
@@ -289,7 +289,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Python",
+    "keywords": ",docker",
     "description": "",
 }
 </script>
@@ -363,7 +363,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">程序说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重新封装SubWork类"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">重新封装SubWork类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调用命令的内部方法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">调用命令的内部方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对外的方法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">对外的方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对日志处理的方法"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">对日志处理的方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用方法</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#镜像管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">镜像管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-获取镜像"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 获取镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-本地镜像"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 本地镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-镜像制作"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. 镜像制作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-镜像推送"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4. 镜像推送</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -395,7 +395,7 @@
         
     
             <p class="article-headline-p">
-                带有超时设置的subprocess
+                Docker系列(二)--镜像管理
             </p>
         </div>
 
@@ -414,7 +414,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jason</strong>
-        <span>Sep 08, 2017</span>
+        <span>Oct 29, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -438,7 +438,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Python/">Python</a>
+        <a class="post_tag-link" href="/tags/docker/">docker</a>
     </ul>
     
 
@@ -452,7 +452,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/09/08/subprocess_with_timeout/" class="leancloud-views_num" data-flag-title="带有超时设置的subprocess">
+                <span id="/2017/10/29/docker-image-management/" class="leancloud-views_num" data-flag-title="Docker系列(二)--镜像管理">
      &nbsp;Views
 </span>
 
@@ -464,7 +464,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=带有超时设置的subprocess&url=http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker系列(二)--镜像管理&url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -473,7 +473,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=带有超时设置的subprocess&url=http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html&via=Jason" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker系列(二)--镜像管理&url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html&via=Jason" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -482,7 +482,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://kidnet.github.io/2017/10/29/docker-image-management/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -515,168 +515,133 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在使用subprocess模块时，总是遇到调用调用系统命令后，子进程执行完后没有退出，造成卡死在系统中。虽然遇到的几率不是很频繁，但是对于频繁调用的定时任务来说，会产生很多卡死的进程(实际中遇到过很多子进程卡死，导致系统资源耗尽，宕机)。为解决这个问题，重新对subprocess封装，加入对调用命令执行超时的处理。</p>
-<h2 id="程序说明"><a href="#程序说明" class="headerlink" title="程序说明"></a>程序说明</h2><h3 id="重新封装SubWork类"><a href="#重新封装SubWork类" class="headerlink" title="重新封装SubWork类"></a>重新封装SubWork类</h3><p>对subprocess重新封装，定义一些默认属性。</p>
-<pre><code>class SubWork(Object):    
-def __init__(self):                                                                                                                                           &quot;&quot;&quot;
-    Default None                                                           
-    &quot;&quot;&quot;                                                                   
-    self._Popen = None                                                     
-    self._pid = None           #子进程PID                                                   
-    self._return_code = None   #执行命令返回值                                           
-    self._cwd = None           #执行目录                                           
-    self._start_time = None    #子进程开始执行的时间戳
-</code></pre><h3 id="调用命令的内部方法"><a href="#调用命令的内部方法" class="headerlink" title="调用命令的内部方法"></a>调用命令的内部方法</h3><p>这里定义了一个内部方法，用于使用subprocess调用系统命令，并做超时处理。</p>
-<ol>
-<li>subprocess接收命令格式为一个list，所以使用shlex.split()进行命令切分。此方法接收4个参数：命令，标准输出，标准错误和执行目录。</li>
-<li>超时处理，在调用<code>subprocess.Popen()</code>方法后，先获取当前时间戳，然后循环判断，是否程序正常退出(<code>poll()</code>方法获取子进程状态)并且是在超时时间之内，这里用这个循环来代替<code>wait()</code>方法来阻塞进程，并判断超时。如果超过超时时间，方法继续执行，获取进程执行返回的状态(此时可能子进程并未执行完毕)，再次判断子进程是否退出，如在此处还未退出，执行<code>terminate()</code>方法，给子进程发送信号，退出子进程，等待1秒，再次判断进程是否退出，如还未退出证明进程未正常相应<code>terminate()</code>发出的信号，此时使用<code>kill()</code>方法，发出<code>SIGKILL</code>信号，强制退出子进程。</li>
-<li>最终获取子进程退出的状态。</li>
-</ol>
-<p>代码如下:</p>
-<pre><code>def _run(self):
-    #Run cmd.
-    #Split command string.
-    cmd = shlex.split(self._cmd)
-    self._Popen = subprocess.Popen(args=cmd,
-                                   stdout=self._stdout_fd,
-                                   stderr=self._stderr_fd,
-                                   cwd=self._cwd)
-    self._pid = self._Popen.pid
-    self._start_time = time.time()
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Docker的容器是基于镜像的，所有容器是通过制作好的镜像启动的，下面会介绍镜像的管理和容器的管理。</p>
+<h2 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h2><p>Docker的镜像可以通过多种途径获取，获取镜像后将镜像存入本地镜像库中，以供容器使用。</p>
+<h3 id="1-获取镜像"><a href="#1-获取镜像" class="headerlink" title="1. 获取镜像"></a>1. 获取镜像</h3><p>镜像可以从公共镜像库中获取(类似yum源)，也可以自己制作，或导入已有镜像(从别的Docker导出的或OpenVZ一类虚拟化软件中导出的)。</p>
+<ul>
+<li>从公共镜像库中获取镜像</li>
+</ul>
+<p>使用以下命令从公共镜像库中获取镜像: </p>
+<pre><code>$ docker pull &lt;image_name&gt;
+</code></pre><p>公共镜像库支持查询功能，可以先查询需要的镜像是否存在:</p>
+<pre><code>$ docker search &lt;image_name&gt;
+</code></pre><ul>
+<li>导入镜像 </li>
+</ul>
+<p>导入从其他Docker导出的镜像:</p>
+<pre><code>$ docker load &lt; &lt;image_file_name&gt;
+</code></pre><p>导入从虚拟化软件(OpenVZ)导出的镜像:</p>
+<pre><code>$ cat &lt;openvz_image_file_name&gt;  |docker import - &lt;image_name&gt;:&lt;tag&gt;
+</code></pre><p>(<a href="https://openvz.org/Download/template/precreated" target="_blank" rel="external">OpenVZ镜像下载地址</a>)</p>
+<h3 id="2-本地镜像"><a href="#2-本地镜像" class="headerlink" title="2. 本地镜像"></a>2. 本地镜像</h3><p>启动容器的镜像都是在本地镜像库中，对本地镜像库可以进行管理(删除，标签管理等)。</p>
+<ul>
+<li>本地镜像列表</li>
+</ul>
+<p>管理本地镜像需要了解本地已存在的镜像:</p>
+<pre><code>$ docker images
+</code></pre><p>本地镜像中会列出镜像名称，id及tag(版本)。</p>
+<ul>
+<li>删除本地镜像</li>
+</ul>
+<p>如果本地镜像过多，有些过时的镜像，或者不再使用的镜像，需要被删除时，可以使用以下命令:</p>
+<pre><code>#如果一个镜像有多个tag的话，只会删除此tag
+$ docker rmi &lt;image_name&gt;:&lt;tag&gt; 
+#删除镜像    
+$ dokcer rmi &lt;image_id&gt;
+</code></pre><p> *注: 如果此镜像被其他镜像依赖，无法删除(后面会介绍依赖关系)。</p>
+<ul>
+<li>导出镜像</li>
+</ul>
+<p>有时可能需要从一个Docker中导出镜像到另一个Docker中，导出本地镜像的方法如下:</p>
+<pre><code>$ docker save &lt;image_id&gt; &gt; &lt;export_image_name&gt;
+</code></pre><h3 id="3-镜像制作"><a href="#3-镜像制作" class="headerlink" title="3. 镜像制作"></a>3. 镜像制作</h3><p>有时标准镜像的内容无法满足我们的需求，这时就需要自己制作镜像，这里介绍的制作镜像的方法是基于已有镜像，或将一个启动的容器提交为一个镜像。</p>
+<ul>
+<li>基于已有镜像制作镜像</li>
+</ul>
+<p>使用Dockerfile基于已有镜像制作新的镜像，一个简单的Dockerfile：</p>
+<pre><code># Use an official Python runtime as a parent image
+FROM python:2.7-slim
 
-    while (self._Popen.poll() == None and
-            (time.time() - self._start_time) &lt; self._timeout):
-        time.sleep(1)
+# Set the working directory to /app
+WORKDIR /app
 
-    _r_code = self._Popen.poll()
+# Copy the current directory contents into the container at /app
+ADD . /app
 
-    # If child process has not exited yet, terminate it.
-    if self._Popen.poll() == None:
-        self._Popen.terminate()
-        _r_code = 254
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
 
-    # Wait for the child process to exit.
-    time.sleep(1)
+# Make port 80 available to the world outside this container
+EXPOSE 80
 
-    # If child process has not been terminated yet, kill it.
-    if self._Popen.poll() == None:
-        self._Popen.kill()
-        _r_code = 255
+# Define environment variable
+ENV NAME World
 
-    self._return_code = _r_code
-</code></pre><h3 id="对外的方法"><a href="#对外的方法" class="headerlink" title="对外的方法"></a>对外的方法</h3><p>外部调用的方法<code>start()</code>，使用此方法进行执行命令的调用。接收命令，超时时间，标准输入，标准输出，标准错误，是否使用tty(是否将结果输出到终端)，是否使用时间戳(返回结果中打印开始的时间)。此方法主要是调用内部执行命令的方法(_run())，然后对输出进行格式化。</p>
-<pre><code>def start(self,
-          cmd,
-          timeout=5*60*60,
-          stdin=None,
-          stdout=None,
-          stderr=None,
-          tty=False,
-          timestamp=False):
+# Run app.py when the container launches
+CMD [&quot;python&quot;, &quot;app.py&quot;]
+</code></pre><p>上面Dockerfile中制作了一个python应用的镜像，需要<code>requirements.txt</code>(运行这个python应用需要的模块)和<code>app.py</code>(python应用)，这两个文件需要和Dockerfile在同一个目录中(<code>ADD . /app</code>定义的)：</p>
+<pre><code>$ ls
+Dockerfile        app.py            requirements.txt
+</code></pre><p>最后使用以下命令制作镜像:</p>
+<pre><code>docker build -t firstapp .
+</code></pre><p>在本地镜像库可以看到刚刚生成的镜像:</p>
+<pre><code>$ docker images
 
-    self._cmd = cmd
-    self._stdin = stdin
-    self._stdout = stdout
-    self._stderr = stderr
-    self._timeout = timeout
-    self._is_tty = tty
-    self._timestamp = timestamp
+REPOSITORY            TAG                 IMAGE ID
+firstapp         latest              326387cea398
+</code></pre><ul>
+<li>基于容器制作镜像</li>
+</ul>
+<p>想对已有镜像做简单修改，或者不习惯于写Dockerfile，可以使用镜像启动一个容器，然后在容器中对系统进行修改，修改后将内容重新提交为一个新的镜像:</p>
+<pre><code>$ docker commit &lt;container_id&gt; &lt;image_name&gt;:[&lt;tag&gt;]
+</code></pre><h3 id="4-镜像推送"><a href="#4-镜像推送" class="headerlink" title="4. 镜像推送"></a>4. 镜像推送</h3><p>将本地镜像(自己制作的镜像)，推送到镜像库(多用于私有镜像库，如是公共项目提交到公共镜像库)。</p>
+<ul>
+<li>推送到公共镜像库</li>
+</ul>
+<p>将自己制作的镜像，推送到公共镜像库，需要有对应镜像库的权限(登录认证)，才可以推送到对应的镜像库中。</p>
+<p>登录到公共镜像库:</p>
+<pre><code>$ docker login
+Login with your
+Docker ID to push and pull images from Docker Hub. If you don&apos;t have a Docker
+ID, head over to https://hub.docker.com to
+create one.
+Username: test #Your login name
+Password:
+Login Succeeded
+</code></pre><ul>
+<li>可以到<a href="http://hub.docker.com" target="_blank" rel="external">Docker公共镜像库</a>创建账号，建立自己的镜像库(类似于github)。</li>
+</ul>
+<p>推送镜像:</p>
+<pre><code>$ docker push &lt;login_name&gt;/&lt;image_name&gt;:&lt;tag&gt;
 
-    #Init output.
-    info = None
-    err = None
+$ docker push test/firstapp:last
+The push refers to a
+repository [docker.io/test/firstapp]
+34e7b85d83e4: Pushed 
+last: 
+digest:sha256:dafc45b8b533d5ad5564a3821e9e1a252b58f44e69c6052bddcd00139782ee08     
+size:529
+</code></pre><ul>
+<li>推送到私有镜像库</li>
+</ul>
+<p>有时自己的镜像不想被别人看到，这时可以搭建自己的私有镜像库(后续会介绍)，然后将自己的镜像提交到私有的镜像库。</p>
+<p>私有镜像库可以不需要登录，先给需要提交的镜像设置一个<code>tag</code>，<code>tag</code>中将私有镜像库的地址写入即可(IP，hostname或域名):</p>
+<pre><code>$ docker &lt;image_id&gt; &lt;private_registry_address&gt;/&lt;image_name&gt;:&lt;tag&gt;
 
-    if self._timestamp:
-        start_time = time.strftime(&quot;%Y-%m-%d %X&quot;, time.localtime())
-        file_start = &quot;Start Time: &quot; + start_time + &quot;\n&quot;
-    else:
-        file_start = &quot;&quot;
-        file_end = &quot;&quot;
+$ docker tag 34e7b85d83e4 10.236.100.3:5000/firstapp:last
 
-    try:
-        #Init the file handle of output.
-        if self._is_tty:
-            self._stdout_fd = None
-            self._stderr_fd = None
-
-        elif (self._stdout is None or
-            self._stderr is None or
-            self._stdout == self._stderr):
-
-            self._stdout_fd = tempfile.TemporaryFile()
-            self._stderr_fd = tempfile.TemporaryFile()
-
-        else:
-            self._stdout_fd = self._create_handler(self._stdout)
-            self._stderr_fd = self._create_handler(self._stderr)
-            self._stdout_fd.write(file_start)
-            self._stdout_fd.flush()
-            self._stderr_fd.write(file_start)
-            self._stderr_fd.flush()
-
-        self._run()
-
-        if self._timestamp:
-            end_time = time.strftime(&quot;%Y-%m-%d %X&quot;, time.localtime())
-            file_end = &quot;End Time: &quot; + end_time + &quot;\n&quot;
-
-        #Write and Read output content.
-        if not self._is_tty:
-            self._stdout_fd.write(file_end)
-            self._stderr_fd.write(file_end)
-
-            self._stdout_fd.flush()
-            self._stderr_fd.flush()
-
-            self._stdout_fd.seek(0)
-            self._stderr_fd.seek(0)
-            info = file_start + self._stdout_fd.read() + file_end
-            err = file_start + self._stderr_fd.read() + file_end
-    finally:
-        #Close file handle.
-        if not self._is_tty:
-            self._stdout_fd.close()
-            self._stderr_fd.close()
-
-    return {&quot;code&quot;:self._return_code,
-            &quot;stdout&quot;:info,
-            &quot;stderr&quot;:err
-            }
-</code></pre><p>  这里输出分为3种类型：</p>
-<ol>
-<li>直接输出到终端，设置tty=True即可，就是直接打印到终端。</li>
-<li>输出到临时文件中，如果tty=False，并且没有输入指定的log文件（stdout和stderr），某块会自动创建一个临时文件来记录日志。</li>
-<li>输出到指定日志中，设置了输出日志，会将命令执行的标准输出和标准错误输出到指定日志文件中（实时输出）。</li>
-</ol>
-<p>*注意: 如果设置使用输出到tty，最终start()方法只会返回命令执行的状态码，不会返回执行结果（已经输出到终端），使用临时文件作为日志或指定输出日志文件，最终start()方法会最终将日志返回给调用的程序。</p>
-<h3 id="对日志处理的方法"><a href="#对日志处理的方法" class="headerlink" title="对日志处理的方法"></a>对日志处理的方法</h3><p>创建日志文件，初始化日志句柄。</p>
-<pre><code>#Create file handle.
-def _create_handler(self, filename):
-    if isinstance(filename, file):
-        return filename
-    elif isinstance(filename, basestring):
-        path = os.path.dirname(filename)
-        timestamp = time.strftime(&quot;%Y%m%d%H%M%S&quot;, time.localtime())
-
-        if not os.path.exists(path):
-            os.makedirs(path)
-        elif os.path.exists(filename) and not os.path.isfile(filename):
-            backup_name = filename + timestamp
-            os.rename(filename, backup_name)
-
-        fd = open(filename, &apos;a+b&apos;)
-        return fd
-    else:
-        raise &quot;The type of \&apos;filename\&apos; must be \&apos;file\&apos; or \&apos;basestring\&apos;&quot;
-</code></pre><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><code>SubWork</code>使用方法如下:</p>
-<pre><code>import SubWork
-
-cmd = &quot;/bin/ls /tmp&quot;
-worker = SubWork()
-res = worker.start(cmd, 300， &quot;/tmp/stdout.log&quot;, &quot;/tmp/stderr.log&quot;)
-print res
-</code></pre><p>这里会执行<code>/bin/ls /tmp</code>命令，超时时间300秒，将执行的标准输出实时输出到<code>/tmp/stdout.log</code>中，将输出的标准错误实时输出到<code>/tmp/stderr.log</code> 中，最终<code>res</code>变量中会有命令执行的状态码和命令执行的输出结果。</p>
-
+repository [10.236.100.3:5000/firstapp]
+acce4ec5f074: Pushed
+5d450a8c7e38: Pushed
+e8fd5087fa08: Pushed
+cf394a2f01e4: Pushed
+f16d5ac23cee: Pushed
+57861a68f43a: Pushed
+97ca462ad9ee: Pushed
+last: 
+digest:sha256:b0851324bac55083172ed2068dfb388acabdce14dffdb9787f4e6c044b524f19     
+size:1764
+</code></pre>
         
     
 
@@ -696,19 +661,19 @@ print res
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/09/11/markdown/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/09/19/docker-install/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
