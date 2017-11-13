@@ -39,7 +39,7 @@
     
     <title>
         
-            Docker系列(二)--镜像管理 | 
+            Docker系列-镜像管理(一) | 
         
         Jason
     </title>
@@ -237,18 +237,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://kidnet.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Docker系列(二)--镜像管理 | Jason">
+    <meta property="og:title" content="Docker系列-镜像管理(一) | Jason">
     <meta property="og:image" content="http://kidnet.github.io/img/favicon.png" />
     <meta property="og:description" content="">
     <meta property="og:article:tag" content="docker"> 
 
     
         <meta property="article:published_time" content="Sun Oct 29 2017 15:32:20 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Oct 29 2017 17:40:42 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Nov 13 2017 10:29:10 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Docker系列(二)--镜像管理 | Jason">
+    <meta name="twitter:title" content="Docker系列-镜像管理(一) | Jason">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://kidnet.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -269,9 +269,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://kidnet.github.io/2017/10/29/docker-image-management/index.html",
-    "headline": "Docker系列(二)--镜像管理",
+    "headline": "Docker系列-镜像管理(一)",
     "datePublished": "Sun Oct 29 2017 15:32:20 GMT+0800",
-    "dateModified": "Sun Oct 29 2017 17:40:42 GMT+0800",
+    "dateModified": "Mon Nov 13 2017 10:29:10 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jason",
@@ -395,7 +395,7 @@
         
     
             <p class="article-headline-p">
-                Docker系列(二)--镜像管理
+                Docker系列-镜像管理(一)
             </p>
         </div>
 
@@ -452,7 +452,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/10/29/docker-image-management/" class="leancloud-views_num" data-flag-title="Docker系列(二)--镜像管理">
+                <span id="/2017/10/29/docker-image-management/" class="leancloud-views_num" data-flag-title="Docker系列-镜像管理(一)">
      &nbsp;Views
 </span>
 
@@ -464,7 +464,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker系列(二)--镜像管理&url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker系列-镜像管理(一)&url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -473,7 +473,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker系列(二)--镜像管理&url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html&via=Jason" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker系列-镜像管理(一)&url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html&via=Jason" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -521,17 +521,40 @@
 <ul>
 <li>从公共镜像库中获取镜像</li>
 </ul>
-<p>使用以下命令从公共镜像库中获取镜像: </p>
-<pre><code>$ docker pull &lt;image_name&gt;
-</code></pre><p>公共镜像库支持查询功能，可以先查询需要的镜像是否存在:</p>
-<pre><code>$ docker search &lt;image_name&gt;
+<p>使用<code>docker pull &lt;image_name&gt;[:tag]</code>命令从公共镜像库中获取镜像: </p>
+<pre><code>$ docker pull centos
+Using default tag: latest
+latest: Pulling from library/centos
+d9aaf4d82f24: Pull complete 
+Digest: sha256:4565fe2dd7f4770e825d4bd9c761a81b26e49cc9e3c9631c58cfc3188be9505a
+Status: Downloaded newer image for centos:latest
+</code></pre><p>不指定<code>tag</code>的会自动选择使用<code>latest</code>标签。</p>
+<p>公共镜像库支持查询功能，可以先使用<code>docker search &lt;image_name&gt;</code>查询需要的镜像是否存在:</p>
+<pre><code>$ docker search centos
+NAME                               DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+centos                             The official build of CentOS.                   3789      [OK]       
+ansible/centos7-ansible            Ansible on Centos7                              103                  [OK]
+jdeathe/centos-ssh                 CentOS-6 6.9 x86_64 / CentOS-7 7.4.1708 x8...   89                   [OK]
+tutum/centos                       Simple CentOS docker image with SSH access      33                   
+imagine10255/centos6-lnmp-php56    centos6-lnmp-php56                              31                   [OK]
+gluster/gluster-centos             Official GlusterFS Image [ CentOS-7 +  Glu...   21                   [OK]
+kinogmt/centos-ssh                 CentOS with SSH                                 17                   [OK]
+......
 </code></pre><ul>
 <li>导入镜像 </li>
 </ul>
-<p>导入从其他Docker导出的镜像:</p>
-<pre><code>$ docker load &lt; &lt;image_file_name&gt;
-</code></pre><p>导入从虚拟化软件(OpenVZ)导出的镜像:</p>
-<pre><code>$ cat &lt;openvz_image_file_name&gt;  |docker import - &lt;image_name&gt;:&lt;tag&gt;
+<p>使用<code>docker load &lt; &lt;image_file_name&gt;</code>导入从其他Docker导出的镜像:</p>
+<pre><code>$ docker load &lt; centos-sshd
+36018b5e9787: Loading layer [==================================================&gt;]  200.1MB/200.1MB
+56ab33f0cb6c: Loading layer [==================================================&gt;]  61.48MB/61.48MB
+52d118e898dd: Loading layer [==================================================&gt;]  21.99MB/21.99MB
+52e44758f62d: Loading layer [==================================================&gt;]  1.678MB/1.678MB
+6f88bf69d4eb: Loading layer [==================================================&gt;]  1.707MB/1.707MB
+5afae9f25cde: Loading layer [==================================================&gt;]  1.787MB/1.787MB
+Loaded image ID: sha256:b8c73db541e787c15f8acdb892cebc41a00e8a1b257b02aa9b0be921f58d6426    
+</code></pre><p>使用<code>cat &lt;openvz_image_file_name&gt; | docker import - &lt;image_name&gt;:&lt;tag&gt;</code>导入从虚拟化软件(OpenVZ)导出的镜像:</p>
+<pre><code>$ cat centos-6-x86_64.tar.gz | docker import - centos:6
+sha256:54152fdb34278505a2007911a211ccd6d1d78dd946522bf797f2cf971efb89cf
 </code></pre><p>(<a href="https://openvz.org/Download/template/precreated" target="_blank" rel="external">OpenVZ镜像下载地址</a>)</p>
 <h3 id="2-本地镜像"><a href="#2-本地镜像" class="headerlink" title="2. 本地镜像"></a>2. 本地镜像</h3><p>启动容器的镜像都是在本地镜像库中，对本地镜像库可以进行管理(删除，标签管理等)。</p>
 <ul>
@@ -539,21 +562,69 @@
 </ul>
 <p>管理本地镜像需要了解本地已存在的镜像:</p>
 <pre><code>$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centos              6                   54152fdb3427        17 minutes ago      825MB
+centos              latest              d123f4e55e12        3 days ago          197MB
+centos-sshd         latest              b8c73db541e7        6 months ago        280MB
 </code></pre><p>本地镜像中会列出镜像名称，id及tag(版本)。</p>
 <ul>
 <li>删除本地镜像</li>
 </ul>
 <p>如果本地镜像过多，有些过时的镜像，或者不再使用的镜像，需要被删除时，可以使用以下命令:</p>
-<pre><code>#如果一个镜像有多个tag的话，只会删除此tag
-$ docker rmi &lt;image_name&gt;:&lt;tag&gt; 
-#删除镜像    
-$ dokcer rmi &lt;image_id&gt;
+<pre><code>$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centos-sshd         latest              b8c73db541e7        6 months ago        280MB
+
+#docker rmi &lt;image_name&gt;:&lt;tag&gt; 
+$ docker rmi centos-sshd：latest
+Untagged: centos-sshd:latest
+Deleted: sha256:b8c73db541e787c15f8acdb892cebc41a00e8a1b257b02aa9b0be921f58d6426
+Deleted: sha256:5fdcd47722d29774d897562430801f6d1c168a422bcce5de1a6ace65302f900d
+Deleted: sha256:4e8a967d0d44bbd801c7787c2f750036988f92f28aeb76feb83293421de32a5d
+Deleted: sha256:50691d2b55b131e1ee4ccee1981556c631f55bb9f57269ceb00cf71c0b0e13bd
+Deleted: sha256:a84fc4ac805b0593c8e7a61a4d774f261cc4a4de6db1ff812c02b8524127d91b
+Deleted: sha256:0f8d19a2914ef598af3cc2dc8861b78b4b0d3b848d4eae97f2c81ba8e9f55015
+Deleted: sha256:36018b5e978717a047892794aebab513ba6856dbe1bdfeb478ca1219df2c7e9c
+
+#检查镜像是否已被删除(唯一的一个本地镜像已被删除)
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+</code></pre><p>如果一个镜像有多个tag的话，只会删除此tag:</p>
+<pre><code>$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centos-sshd         7.2                 b8c73db541e7        6 months ago        280MB
+centos-sshd         latest              b8c73db541e7        6 months ago        280MB
+
+$ docker rmi centos-sshd：latest
+Untagged: centos-sshd:latest #提示只是删除了镜像的一个tag
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centos-sshd         7.2                 b8c73db541e7        6 months ago        280MB     
+</code></pre><p>使用镜像ID删除镜像(无论有多少个tag，都会先删除tag，然后彻底删除镜像):</p>
+<pre><code>#dokcer rmi &lt;image_id&gt;
+$ docker rmi d123f4e55e12
+Untagged: centos-sshd:7.2
+Deleted: sha256:b8c73db541e787c15f8acdb892cebc41a00e8a1b257b02aa9b0be921f58d6426
+Deleted: sha256:5fdcd47722d29774d897562430801f6d1c168a422bcce5de1a6ace65302f900d
+Deleted: sha256:4e8a967d0d44bbd801c7787c2f750036988f92f28aeb76feb83293421de32a5d
+Deleted: sha256:50691d2b55b131e1ee4ccee1981556c631f55bb9f57269ceb00cf71c0b0e13bd
+Deleted: sha256:a84fc4ac805b0593c8e7a61a4d774f261cc4a4de6db1ff812c02b8524127d91b
+Deleted: sha256:0f8d19a2914ef598af3cc2dc8861b78b4b0d3b848d4eae97f2c81ba8e9f55015
+Deleted: sha256:36018b5e978717a047892794aebab513ba6856dbe1bdfeb478ca1219df2c7e9c
 </code></pre><p> *注: 如果此镜像被其他镜像依赖，无法删除(后面会介绍依赖关系)。</p>
 <ul>
 <li>导出镜像</li>
 </ul>
 <p>有时可能需要从一个Docker中导出镜像到另一个Docker中，导出本地镜像的方法如下:</p>
-<pre><code>$ docker save &lt;image_id&gt; &gt; &lt;export_image_name&gt;
+<pre><code>$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centos-sshd         latest              b8c73db541e7        6 months ago        280MB
+
+#docker save &lt;image_id&gt; &gt; &lt;export_image_name&gt;
+$docker save b8c73db541e7 &gt; centos-sshd
+$ls
+centso-sshd
 </code></pre><h3 id="3-镜像制作"><a href="#3-镜像制作" class="headerlink" title="3. 镜像制作"></a>3. 镜像制作</h3><p>有时标准镜像的内容无法满足我们的需求，这时就需要自己制作镜像，这里介绍的制作镜像的方法是基于已有镜像，或将一个启动的容器提交为一个镜像。</p>
 <ul>
 <li>基于已有镜像制作镜像</li>
@@ -608,9 +679,7 @@ create one.
 Username: test #Your login name
 Password:
 Login Succeeded
-</code></pre><ul>
-<li>可以到<a href="http://hub.docker.com" target="_blank" rel="external">Docker公共镜像库</a>创建账号，建立自己的镜像库(类似于github)。</li>
-</ul>
+</code></pre><p>*可以到<a href="http://hub.docker.com" target="_blank" rel="external">Docker公共镜像库</a>创建账号，建立自己的镜像库(类似于github)。</p>
 <p>推送镜像:</p>
 <pre><code>$ docker push &lt;login_name&gt;/&lt;image_name&gt;:&lt;tag&gt;
 
