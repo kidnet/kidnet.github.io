@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Sun Oct 29 2017 15:32:20 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Nov 21 2017 14:32:30 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Nov 22 2017 10:12:31 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://kidnet.github.io/2017/10/29/docker-image-management/index.html",
     "headline": "Docker系列(二)-镜像管理",
     "datePublished": "Sun Oct 29 2017 15:32:20 GMT+0800",
-    "dateModified": "Tue Nov 21 2017 14:32:30 GMT+0800",
+    "dateModified": "Wed Nov 22 2017 10:12:31 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jason",
@@ -650,7 +650,7 @@ ENV NAME World
 
 # Run app.py when the container launches
 CMD [&quot;python&quot;, &quot;app.py&quot;]
-</code></pre><p>上面Dockerfile中制作了一个python应用的镜像，需要<code>requirements.txt</code>(运行这个python应用需要的模块)和<code>app.py</code>(python应用)，这两个文件需要和Dockerfile在同一个目录中(<code>ADD . /app</code>定义的)：</p>
+</code></pre><p>上面Dockerfile中制作了一个python应用的镜像(Dockerfile中可以同时定义容器的启动的参数，后面会详细介绍)，需要<code>requirements.txt</code>(运行这个python应用需要的模块)和<code>app.py</code>(python应用)，这两个文件需要和Dockerfile在同一个目录中(<code>ADD . /app</code>定义的)：</p>
 <pre><code>$ ls
 Dockerfile        app.py            requirements.txt
 </code></pre><p>最后使用以下命令制作镜像:</p>
@@ -729,6 +729,14 @@ size:1764
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2017/11/22/docker-container-management/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -828,7 +836,7 @@ size:1764
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
