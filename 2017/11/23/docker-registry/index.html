@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Thu Nov 23 2017 15:30:45 GMT+0800" />
-        <meta property="article:modified_time" content="Thu Nov 23 2017 16:35:57 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Nov 24 2017 16:39:15 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://kidnet.github.io/2017/11/23/docker-registry/index.html",
     "headline": "Docker系列(四):私有仓库(一)",
     "datePublished": "Thu Nov 23 2017 15:30:45 GMT+0800",
-    "dateModified": "Thu Nov 23 2017 16:35:57 GMT+0800",
+    "dateModified": "Fri Nov 24 2017 16:39:15 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jason",
@@ -363,7 +363,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker-Registry"><span class="post-toc-number">2.</span> <span class="post-toc-text">Docker Registry</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-使用docker-distribution启动Registry"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 使用docker-distribution启动Registry</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker-Registry"><span class="post-toc-number">2.</span> <span class="post-toc-text">Docker Registry</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-使用docker-distribution启动Registry"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 使用docker-distribution启动Registry</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用已有的镜像启动Registry"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 使用已有的镜像启动Registry</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-访问无验证的Registry"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. 访问无验证的Registry</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-查看私有库中的镜像"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4. 查看私有库中的镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-其它"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">5. 其它</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安全的Registry"><span class="post-toc-number">3.</span> <span class="post-toc-text">安全的Registry</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-制作自签署证书"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 制作自签署证书</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-修改配置文件"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 修改配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-客户端证书配置"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3. 客户端证书配置</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -544,7 +544,153 @@ storage:
 http:
     addr: :5000 #对外服务的端口
 </code></pre><p>后面会继续说明一些用到的配置。</p>
+<h3 id="2-使用已有的镜像启动Registry"><a href="#2-使用已有的镜像启动Registry" class="headerlink" title="2. 使用已有的镜像启动Registry"></a>2. 使用已有的镜像启动Registry</h3><p>官方文档都是通过下载已经配置好的Registry的镜像，通过容器启动此镜像，来提供Registry的服务。</p>
+<ul>
+<li>下载官方镜像</li>
+</ul>
+<p>直接拉取官方镜像:</p>
+<pre><code>$ docker pull registry:2
+2: Pulling from library/registry
+49388a8c9c86: Pull complete 
+e4d43608dd22: Pull complete 
+3a41740f900c: Pull complete 
+e16ef4b76684: Pull complete 
+65f212f7c778: Pull complete 
+Digest: sha256:d837de65fd9bdb81d74055f1dc9cc9154ad5d8d5328f42f57f273000c402c76d
+Status: Downloaded newer image for registry:2
+</code></pre><ul>
+<li>通过镜像启动Registry服务</li>
+</ul>
+<p>通过官方镜像启动容器:</p>
+<pre><code>$ docker run -d -p 5000:5000 --name registry registry:2
+4199973ca1c7511fd608da534570375023fa69715948b13f4d9b3a3c277d3536
 
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+4199973ca1c7        registry:2          &quot;/entrypoint.sh /e...&quot;   5 seconds ago       Up 4 seconds        0.0.0.0:5000-&gt;5000/tcp   registry
+</code></pre><p>其实启动容器时如果没有对应的镜像，会自动下载:</p>
+<pre><code>$ docker run -d -p 5000:5000 --name registry registry:2
+Unable to find image &apos;registry:2&apos; locally #提示在本地镜像库中没有找到镜像
+2: Pulling from library/registry          #开始从公共镜像库下载镜像
+49388a8c9c86: Pull complete 
+e4d43608dd22: Pull complete 
+3a41740f900c: Pull complete 
+e16ef4b76684: Pull complete 
+65f212f7c778: Pull complete 
+Digest: sha256:d837de65fd9bdb81d74055f1dc9cc9154ad5d8d5328f42f57f273000c402c76d
+Status: Downloaded newer image for registry:2  #镜像下载完成
+6dabd62f77e8e2079bed029599aea96b65a551bcdb517a4adb24630828dea761 #启动容器
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+registry            2                   a07e3f32a779        5 days ago          33.3MB
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+6dabd62f77e8        registry:2          &quot;/entrypoint.sh /e...&quot;   5 minutes ago       Up 5 minutes        0.0.0.0:5000-&gt;5000/tcp   registry
+</code></pre><h3 id="3-访问无验证的Registry"><a href="#3-访问无验证的Registry" class="headerlink" title="3. 访问无验证的Registry"></a>3. 访问无验证的Registry</h3><p>默认的docker client访问无认证的Registry可能会出现错误：</p>
+<pre><code>$ docker push 10.0.2.15:5000/registry
+The push refers to a repository [10.0.2.15:5000/registry]
+Get https://10.0.2.15:5000/v2/: http: server gave HTTP response to HTTPS client
+</code></pre><p>docker client客户端默认需要访问<code>https</code>的地址，需要增加配置，重启docker:</p>
+<pre><code>$ echo &quot;{\&quot;insecure-registries\&quot;:[\&quot;10.0.2.15:5000\&quot;]}&quot; &gt;&gt; /etc/docker/daemon.json
+$ systemctl restart docker
+</code></pre><p>重启后重新推送镜像: </p>
+<pre><code>$ docker push 10.0.2.15:5000/registry
+The push refers to a repository [10.0.2.15:5000/registry]
+3c133a51bc00: Pushed 
+a2717186d7dd: Pushed 
+656c7684d0bd: Pushed 
+7683d4fcdf4e: Pushed 
+ef763da74d91: Pushed 
+2: digest: sha256:435db1be85c6c10b2f506516aa14d8c485c1f1bd5f4a941a637808b085f294b6 size: 1364
+3c133a51bc00: Layer already exists 
+a2717186d7dd: Layer already exists 
+656c7684d0bd: Layer already exists 
+7683d4fcdf4e: Layer already exists 
+ef763da74d91: Layer already exists 
+latest: digest: sha256:435db1be85c6c10b2f506516aa14d8c485c1f1bd5f4a941a637808b085f294b6 size: 1364
+</code></pre><p>如果是通过二进制程序启动的docker，直接在启动时增加参数即可:</p>
+<pre><code>$ dockerd --insecure-registry 10.0.2.15:5000 &amp; #如已启动docker，请先停止已启动的进程
+</code></pre><h3 id="4-查看私有库中的镜像"><a href="#4-查看私有库中的镜像" class="headerlink" title="4. 查看私有库中的镜像"></a>4. 查看私有库中的镜像</h3><p>Registry没有图形界面，只能通过命令访问接口:</p>
+<pre><code>$ curl http://10.0.2.15/v2/_catalog
+{&quot;repositories&quot;:[&quot;registry&quot;]}
+</code></pre><h3 id="5-其它"><a href="#5-其它" class="headerlink" title="5. 其它"></a>5. 其它</h3><p>以上2种配置启动Registry的方法，对比来说第一种方法(直接安装<code>docker-distribution</code>包)更为方便简洁，后期也较好维护(官网只有第二种方法，根据情况选择适合自己的方法来启动Registry)。</p>
+<h2 id="安全的Registry"><a href="#安全的Registry" class="headerlink" title="安全的Registry"></a>安全的Registry</h2><p>Docker官方是推荐采用带有认证的Registry，传输采用tls。</p>
+<h3 id="1-制作自签署证书"><a href="#1-制作自签署证书" class="headerlink" title="1. 制作自签署证书"></a>1. 制作自签署证书</h3><p>制作证书前需要在<code>openssl.cnf</code>配置中加入证书绑定的域名(或主机名或IP)。否则推送镜像时会差生以下错误:</p>
+<pre><code>$ docker push 10.0.2.15:5000/registry:2
+The push refers to a repository [10.0.2.15:5000/registry]
+Get https://10.0.2.15:5000/v2/: x509: cannot validate certificate for 10.0.2.15 because it doesn&apos;t contain any IP SANs
+</code></pre><p>修改配置文件，加入IP:</p>
+<pre><code>$ cp /etc/pki/tls/openssl.cnf /tmp/
+$ vim /tmp/openssl.cnf
+......
+[v3_ca]
+subjectAltName = IP: 10.0.2.15
+</code></pre><p>修改后保存退出即可。继续使用<code>openssl</code>来制作自签署的证书，注意需要指定刚才修改的<code>openssl.cnf</code>配置文件:</p>
+<pre><code>$ mkdir /etc/docker-distribution/registry/certs
+$ cd /etc/docker-distribution/registry/certs
+$ openssl req -newkey rsa:2048 -nodes -sha256 -keyout domain.key -x509 -days 365 -out domain.crt -config /tmp/openssl.cnf
+Generating a 2048 bit RSA private key
+.............+++
+...............................+++
+writing new private key to &apos;domain.key&apos;
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter &apos;.&apos;, the field will be left blank.
+-----
+Country Name (2 letter code) [XX]:CN
+State or Province Name (full name) []:BJ
+Locality Name (eg, city) [Default City]:BJ
+Organization Name (eg, company) [Default Company Ltd]:ZL
+Organizational Unit Name (eg, section) []:ZL
+Common Name (eg, your name or your server&apos;s hostname) []:registry
+Email Address []:
+
+$ ls
+domain.crt  domain.key
+</code></pre><h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h3><p>修改Registry的配置文件，添加<code>tls</code>证书:</p>
+<pre><code>$ vim /etc/docker-distribution/registry/config.yml
+version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+    cache:
+        layerinfo: inmemory
+    filesystem:
+        rootdirectory: /var/lib/registry
+http:
+    addr: :5000
+    #增加以下tls的配置
+    tls:
+        certificate: /etc/docker-distribution/registry/certs/domain.crt
+        key: /etc/docker-distribution/registry/certs/domain.key
+</code></pre><p>重启Registry服务:</p>
+<pre><code>$ systemctl restart docker-distribution
+</code></pre><h3 id="3-客户端证书配置"><a href="#3-客户端证书配置" class="headerlink" title="3. 客户端证书配置"></a>3. 客户端证书配置</h3><p>Registry服务配置好后，需要将证书配置到客户端，否则会产生以下错误：</p>
+<pre><code>$ docker push 10.0.2.15:5000/registry:2
+The push refers to a repository [10.0.2.15:5000/registry]
+Get https://10.0.2.15:5000/v2/: x509: cannot validate certificate for 10.0.2.15 because it doesn&apos;t contain any IP SANs
+</code></pre><p>将证书配置到客户端，并重启客户端:</p>
+<pre><code>$ mkdir -p /etc/docker/certs.d/10.0.2.15:5000
+# 注意，本文档测试时客户端与私有库是同一台服务器，以下这个证书应该是拷贝到真实的客户端服务器中。
+$ cp /etc/docker-distribution/registry/certs/domain.crt /etc/docker/certs.d/10.0.2.15\:5000/ca.crt
+$ systemctl restart docker
+</code></pre><p>测试是否正常访问私有镜像库:</p>
+<pre><code>$ docker push 10.0.2.15:5000/registry:2
+The push refers to a repository [10.0.2.15:5000/registry]
+3c133a51bc00: Pushed 
+a2717186d7dd: Pushed 
+656c7684d0bd: Pushed 
+7683d4fcdf4e: Pushed 
+ef763da74d91: Pushed 
+2: digest: sha256:435db1be85c6c10b2f506516aa14d8c485c1f1bd5f4a941a637808b085f294b6 size: 1364
+</code></pre>
         
     
 
