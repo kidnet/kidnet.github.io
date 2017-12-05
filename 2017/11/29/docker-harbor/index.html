@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Wed Nov 29 2017 11:06:22 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Dec 05 2017 18:04:52 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Dec 05 2017 18:09:01 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://kidnet.github.io/2017/11/29/docker-harbor/index.html",
     "headline": "Docker系列(四):Harbor(一)",
     "datePublished": "Wed Nov 29 2017 11:06:22 GMT+0800",
-    "dateModified": "Tue Dec 05 2017 18:04:52 GMT+0800",
+    "dateModified": "Tue Dec 05 2017 18:09:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jason",
@@ -554,10 +554,9 @@
 <p>在<code>harbor.cfg</code>中有2部分配置项，必须配置和可选配置。</p>
 <ul>
 <li>必须配置: 这些配置是必须在配置文件中进行配置的。如果用户更新<code>harbor.cfg</code>中的这些配置将且运行<code>install.sh</code>脚本的时候会重新安装Harbor，这些配置将会立即生效。</li>
-<li><p>可选配置: 这些配置是可选的，用户可以使用这些默认的配置，也可以在启动Harbor后通过Web UI进行配置。如果可选配置在<code>harbor.cfg</code>中更新了，这些配置只在Harbor第一次启动的时候生效。之后在<code>harbor.cfg</code>中更新这些配置就不会生效了。</p>
-<p>  <strong>注意</strong>: 如果选择通过UI来配置可选项，需要确认Harbor已经启动后，再去进行配置。在可选配置中，有一个特殊的配置项，<code>auth_mode</code>必须在注册用户或创建新用户之前配置成需要的认证模式。如果系统中已经存在用户(admin用户除外)，<code>auth_mode</code>是不能被修改的。</p>
-</li>
+<li>可选配置: 这些配置是可选的，用户可以使用这些默认的配置，也可以在启动Harbor后通过Web UI进行配置。如果可选配置在<code>harbor.cfg</code>中更新了，这些配置只在Harbor第一次启动的时候生效。之后在<code>harbor.cfg</code>中更新这些配置就不会生效了。</li>
 </ul>
+<p><strong>注意</strong>: 如果选择通过UI来配置可选项，需要确认Harbor已经启动后，再去进行配置。在可选配置中，有一个特殊的配置项，<code>auth_mode</code>必须在注册用户或创建新用户之前配置成需要的认证模式。如果系统中已经存在用户(admin用户除外)，<code>auth_mode</code>是不能被修改的。</p>
 <h4 id="必须配置项"><a href="#必须配置项" class="headerlink" title="必须配置项:"></a>必须配置项:</h4><ul>
 <li><strong>hostname</strong>: 运行Harbor的服务器的hostname，用于访问UI和提供Registry服务。 这个配置可以是IP地址或者是域名，<code>10.0.100.2</code>或者<code>test-harbor.test.com</code>。不要使用<code>localhost</code>或者<code>127.0.0.1</code>，因为Registry服务需要被其它客户端访问。</li>
 <li><strong>ui_url_protocol</strong>: (值可以是<strong>http</strong>或者<strong>https</strong>，默认为<strong>http</strong>)这个协议用于访问UI和token/notification服务。如果认证被启用，这个配置必须是<em>https</em>。设置https协议后面会有文档详细说明。</li>
