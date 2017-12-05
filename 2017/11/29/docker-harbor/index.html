@@ -39,7 +39,7 @@
     
     <title>
         
-            带有超时设置的subprocess | 
+            Docker系列(四):Harbor(一) | 
         
         Jason
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jason">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",Python">
+    <meta name="keywords" content=",docker">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -237,18 +237,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://kidnet.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="带有超时设置的subprocess | Jason">
+    <meta property="og:title" content="Docker系列(四):Harbor(一) | Jason">
     <meta property="og:image" content="http://kidnet.github.io/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Python"> 
+    <meta property="og:article:tag" content="docker"> 
 
     
-        <meta property="article:published_time" content="Fri Sep 08 2017 15:50:36 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Sep 13 2017 09:54:54 GMT+0800" />
+        <meta property="article:published_time" content="Wed Nov 29 2017 11:06:22 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Dec 05 2017 15:10:58 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="带有超时设置的subprocess | Jason">
+    <meta name="twitter:title" content="Docker系列(四):Harbor(一) | Jason">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://kidnet.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -256,7 +256,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html" />
+        <link rel="canonical" href="http://kidnet.github.io/2017/11/29/docker-harbor/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -268,10 +268,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html",
-    "headline": "带有超时设置的subprocess",
-    "datePublished": "Fri Sep 08 2017 15:50:36 GMT+0800",
-    "dateModified": "Wed Sep 13 2017 09:54:54 GMT+0800",
+    "mainEntityOfPage": "http://kidnet.github.io/2017/11/29/docker-harbor/index.html",
+    "headline": "Docker系列(四):Harbor(一)",
+    "datePublished": "Wed Nov 29 2017 11:06:22 GMT+0800",
+    "dateModified": "Tue Dec 05 2017 15:10:58 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jason",
@@ -289,7 +289,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Python",
+    "keywords": ",docker",
     "description": "",
 }
 </script>
@@ -363,7 +363,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">程序说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重新封装SubWork类"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">重新封装SubWork类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调用命令的内部方法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">调用命令的内部方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对外的方法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">对外的方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对日志处理的方法"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">对日志处理的方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用方法</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开源管理平台"><span class="post-toc-number">2.</span> <span class="post-toc-text">开源管理平台</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Harbor"><span class="post-toc-number">3.</span> <span class="post-toc-text">Harbor</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装包"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装准备"><span class="post-toc-number">5.</span> <span class="post-toc-text">安装准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">6.</span> <span class="post-toc-text">安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-下载安装包"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1. 下载安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-配置Harbor"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2. 配置Harbor</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#必须配置项"><span class="post-toc-number">6.2.1.</span> <span class="post-toc-text">必须配置项:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可选配置项"><span class="post-toc-number">6.2.2.</span> <span class="post-toc-text">可选配置项:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置存储-可选项"><span class="post-toc-number">6.2.3.</span> <span class="post-toc-text">配置存储(可选项)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#完成安装并启动Harbor"><span class="post-toc-number">6.2.4.</span> <span class="post-toc-text">完成安装并启动Harbor</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -395,7 +395,7 @@
         
     
             <p class="article-headline-p">
-                带有超时设置的subprocess
+                Docker系列(四):Harbor(一)
             </p>
         </div>
 
@@ -414,7 +414,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jason</strong>
-        <span>Sep 08, 2017</span>
+        <span>Nov 29, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -438,7 +438,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Python/">Python</a>
+        <a class="post_tag-link" href="/tags/docker/">docker</a>
     </ul>
     
 
@@ -452,7 +452,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/09/08/subprocess_with_timeout/" class="leancloud-views_num" data-flag-title="带有超时设置的subprocess">
+                <span id="/2017/11/29/docker-harbor/" class="leancloud-views_num" data-flag-title="Docker系列(四):Harbor(一)">
      &nbsp;Views
 </span>
 
@@ -464,7 +464,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=带有超时设置的subprocess&url=http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker系列(四):Harbor(一)&url=http://kidnet.github.io/2017/11/29/docker-harbor/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -473,7 +473,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=带有超时设置的subprocess&url=http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html&via=Jason" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker系列(四):Harbor(一)&url=http://kidnet.github.io/2017/11/29/docker-harbor/index.html&via=Jason" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -482,7 +482,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://kidnet.github.io/2017/11/29/docker-harbor/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://kidnet.github.io/2017/09/08/subprocess_with_timeout/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://kidnet.github.io/2017/11/29/docker-harbor/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -515,167 +515,234 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在使用subprocess模块时，总是遇到调用调用系统命令后，子进程执行完后没有退出，造成卡死在系统中。虽然遇到的几率不是很频繁，但是对于频繁调用的定时任务来说，会产生很多卡死的进程(实际中遇到过很多子进程卡死，导致系统资源耗尽，宕机)。为解决这个问题，重新对subprocess封装，加入对调用命令执行超时的处理。</p>
-<h2 id="程序说明"><a href="#程序说明" class="headerlink" title="程序说明"></a>程序说明</h2><h3 id="重新封装SubWork类"><a href="#重新封装SubWork类" class="headerlink" title="重新封装SubWork类"></a>重新封装SubWork类</h3><p>对subprocess重新封装，定义一些默认属性。</p>
-<pre><code>class SubWork(Object):    
-def __init__(self):                                                                                                                                           &quot;&quot;&quot;
-    Default None                                                           
-    &quot;&quot;&quot;                                                                   
-    self._Popen = None                                                     
-    self._pid = None           #子进程PID                                                   
-    self._return_code = None   #执行命令返回值                                           
-    self._cwd = None           #执行目录                                           
-    self._start_time = None    #子进程开始执行的时间戳
-</code></pre><h3 id="调用命令的内部方法"><a href="#调用命令的内部方法" class="headerlink" title="调用命令的内部方法"></a>调用命令的内部方法</h3><p>这里定义了一个内部方法，用于使用subprocess调用系统命令，并做超时处理。</p>
-<ol>
-<li>subprocess接收命令格式为一个list，所以使用shlex.split()进行命令切分。此方法接收4个参数：命令，标准输出，标准错误和执行目录。</li>
-<li>超时处理，在调用<code>subprocess.Popen()</code>方法后，先获取当前时间戳，然后循环判断，是否程序正常退出(<code>poll()</code>方法获取子进程状态)并且是在超时时间之内，这里用这个循环来代替<code>wait()</code>方法来阻塞进程，并判断超时。如果超过超时时间，方法继续执行，获取进程执行返回的状态(此时可能子进程并未执行完毕)，再次判断子进程是否退出，如在此处还未退出，执行<code>terminate()</code>方法，给子进程发送信号，退出子进程，等待1秒，再次判断进程是否退出，如还未退出证明进程未正常相应<code>terminate()</code>发出的信号，此时使用<code>kill()</code>方法，发出<code>SIGKILL</code>信号，强制退出子进程。</li>
-<li>最终获取子进程退出的状态。</li>
-</ol>
-<p>代码如下:</p>
-<pre><code>def _run(self):
-    #Run cmd.
-    #Split command string.
-    cmd = shlex.split(self._cmd)
-    self._Popen = subprocess.Popen(args=cmd,
-                                   stdout=self._stdout_fd,
-                                   stderr=self._stderr_fd,
-                                   cwd=self._cwd)
-    self._pid = self._Popen.pid
-    self._start_time = time.time()
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Registry只能通过API进行管理，然而第三方开发了一些开源的平台来作为私有镜像库管理(类似于github)，可以对用户、权限、镜像库及镜像进行管理，并且有图形化的界面，方便使用。</p>
+<h2 id="开源管理平台"><a href="#开源管理平台" class="headerlink" title="开源管理平台"></a>开源管理平台</h2><p>开源的私有库的管理平台不是很多(可能是我没找到)，主要看到2个，一个是SUSE的<a href="http://port.us.org" target="_blank" rel="external">Portus</a>，另一个是VMWare的<a href="https://vmware.github.io/harbor" target="_blank" rel="external">Harbor</a>。这里只介绍Harbor的部署及应用。</p>
+<h2 id="Harbor"><a href="#Harbor" class="headerlink" title="Harbor"></a>Harbor</h2><p>Harbor是用于存储和分发Docker镜像的企业级Registry服务器，具有以下功能和特性: </p>
+<ul>
+<li>基于角色的权限控制: 用户和docker镜像库通过”项目”关联在一起，一个用户在同一个命名空间下可以有不同的权限。</li>
+<li>镜像复制: 多个Registry实例之间可以进行镜像复制，可以用于负载均衡，高可用及混合多用的场景。</li>
+<li>用户图形化接口: 用户可以通过图形化界面更轻松的浏览和搜索docker仓库，管理项目和命名空间。</li>
+<li>支持AD/LDAP： Harbor支持商业的AD/LDAP的用户认证及管理。</li>
+<li>审计: 所有对于镜像库的操作都是可以被追踪的并可以被审计。</li>
+<li>国际化: 已经支持英语、中文、德语、日语和俄语。</li>
+<li>RESTful API: Harbor大部分的管理操作已经提供了RESTful API。</li>
+<li>部署方便: 提供了在线和离线的安装方式。</li>
+</ul>
+<h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><ul>
+<li>在线安装包: 在线安装包会从Docker公共库下载Harbor的镜像，因此在线安装包会很小。</li>
+<li>离线安装包: 如果主机无法连接到互联网，可以使用离线安装包，离线安装包包含了每一个镜像的构建，所以这个安装包会很大。</li>
+</ul>
+<p><a href="https://github.com/vmware/harbor/releases" target="_blank" rel="external">官方安装包下载地址</a></p>
+<h2 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h2><p>Harbor是使用镜像通过Docker容器部署的，因此需要系统支持Docker。主机需要Python，Docker及Docker Compose。</p>
+<ul>
+<li>Python版本需要2.7版本或更高版本。</li>
+<li>Dockery引擎需要1.10或更高版本。(<a href="https://kidnet.github.io/2017/09/19/docker-install/">Docker安装</a>)</li>
+<li>Docker Compose需要1.6.0或更高版本。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装过程为以下几步:</p>
+<ul>
+<li>下载安装包；</li>
+<li>配置<code>harbor.cfg</code>;</li>
+<li>运行<code>install.sh</code>安装并运行Harbor;</li>
+</ul>
+<h3 id="1-下载安装包"><a href="#1-下载安装包" class="headerlink" title="1. 下载安装包"></a>1. 下载安装包</h3><p>从官方发布地址下载安装包，选择在线或离线的安装包。使用<code>tar</code>命令解压缩这个包。(本文档都是使用离线包进行安装。)</p>
+<p>在线包:</p>
+<pre><code>$ tar -xzvf harbor-online-installer-&lt;version&gt;.tgz
+</code></pre><p>离线包:</p>
+<pre><code>$ tar -xzvf harbor-offline-installer-&lt;version&gt;.tgz
+</code></pre><h3 id="2-配置Harbor"><a href="#2-配置Harbor" class="headerlink" title="2. 配置Harbor"></a>2. 配置Harbor</h3><p><code>harbor.cfg</code>中包含了配置项。</p>
+<p>在<code>harbor.cfg</code>中有2部分配置项，必须配置和可选配置。</p>
+<ul>
+<li>必须配置: 这些配置是必须在配置文件中进行配置的。如果用户更新<code>harbor.cfg</code>中的这些配置将且运行<code>install.sh</code>脚本的时候会重新安装Harbor，这些配置将会立即生效。</li>
+<li>可选配置: 这些配置是可选的，用户可以使用这些默认的配置，也可以在启动Harbor后通过Web UI进行配置。如果可选配置在<code>harbor.cfg</code>中更新了，这些配置只在Harbor第一次启动的时候生效。之后在<code>harbor.cfg</code>中更新这些配置就不会生效了。</li>
+</ul>
+<p><strong>注意</strong>: 如果选择通过UI来配置可选项，需要确认Harbor已经启动后，再去进行配置。在可选配置中，有一个特殊的配置项，<code>auth_mode</code>必须在注册用户或创建新用户之前配置成需要的认证模式。如果系统中已经存在用户(admin用户除外)，<code>auth_mode</code>是不能被修改的。</p>
+<h4 id="必须配置项"><a href="#必须配置项" class="headerlink" title="必须配置项:"></a>必须配置项:</h4><ul>
+<li><strong>hostname</strong>: 运行Harbor的服务器的hostname，用于访问UI和提供Registry服务。 这个配置可以是IP地址或者是域名，<code>10.0.100.2</code>或者<code>test-harbor.test.com</code>。不要使用<code>localhost</code>或者<code>127.0.0.1</code>，因为Registry服务需要被其它客户端访问。</li>
+<li><strong>ui_url_protocol</strong>: (值可以是<strong>http</strong>或者<strong>https</strong>，默认为<strong>http</strong>)这个协议用于访问UI和token/notification服务。如果认证被启用，这个配置必须是<em>https</em>。设置https协议后面会有文档详细说明。</li>
+<li><strong>db_passwd</strong>: MySQL数据库root的密码，用于<strong>db_auth</strong>。</li>
+<li><strong>max_job_wokers</strong>: (默认值为3) 这个作业服务器启动复制进程的数量。 每个镜像的复制作业会有1个进程同步1个库的所有标签到远程目标。 增加这个数值可以启动多个进程同时进行复制作业。但是，因为每个进程会消耗一定的网络/CPU/IO资源，请根据主机硬件资源谨慎设置这个配置。</li>
+<li><strong>customize_crt</strong>：(<strong>on</strong> 或者 <strong>off</strong>, 默认为<strong>on</strong>) 当这个配置项为 <strong>on</strong>时，安装脚本会创建用于生成/验证库的<code>token</code>的私钥和根证书。 当私钥和根证书是通过其它来源提供时(从第三方机构购买的证书)设置此配置项为 <strong>off</strong> 。</li>
+<li><strong>ssl_cert</strong>: SSL证书(<code>cert</code>）的路径, 仅当协议设置为<code>https</code>时这个配置项会被应用。</li>
+<li><strong>ssl_cert_key</strong>: SSL私钥(<code>key</code>)的路径, 仅当协议设置为<code>https</code>时这个配置项会被应用。</li>
+<li><strong>secretkey_path</strong>: 在复制规则中用于加解密一个远程库的密码的私钥(<code>key</code>)的路径。</li>
+<li><strong>log_rotate_count</strong>: 日志文件被轮转 <strong>log_rotate_count</strong> 次后被删除。 如果这个配置项是<code>0</code>，旧的日志不会被轮转，而是直接删除。 </li>
+<li><strong>log_rotate_size</strong>: 只有当日志文件增长到大于 <strong>log_rotate_size</strong> (字节)时，日志文件才会被轮转。如果这个值后面跟随<code>k</code>，这个值被认为是<code>KB</code>; 如果是<code>M</code>， 就被认为是<code>MB</code>;如果是<code>G</code>，就被认为是<code>GB</code>。所以，这个值是<code>100</code>、 <code>100K</code>、 <code>100M</code>和<code>100G</code>都是合法的。</li>
+</ul>
+<h4 id="可选配置项"><a href="#可选配置项" class="headerlink" title="可选配置项:"></a>可选配置项:</h4><ul>
+<li><strong>Email settings</strong>: 这个配置项用于给用户发送密码重置邮件。注意，SSL连接默认是不启用的，如果你的SMTP服务器需要SSL，并且不支持<code>STARTTLS</code>，需要通过设置 <strong>email_ssl = true</strong> 来支持SSL。如果email服务器使用了一个自签名证书或者未授权的证书，需要配置 <strong>email_insecure = true</strong> 。 对于”email_identity”的详细描述请查看<a href="https://tools.ietf.org/rfc/rfc2595.txt" target="_blank" rel="external">rfc2595</a>。</li>
+</ul>
+<p>例:</p>
+<pre><code>email_server = smtp.mydomain.com
+email_server_port = 25
+email_identity =
+email_username = sample_admin@mydomain.com
+email_password = abc
+email_from = admin sample_admin@mydomain.com
+email_ssl = false
+email_insecure = falseemail_server = smtp.mydomain.com
+email_server_port = 25
+email_identity =
+email_username = sample_admin@mydomain.com
+email_password = abc
+email_from = admin sample_admin@mydomain.com
+email_ssl = false
+email_insecure = false
+</code></pre><ul>
+<li><strong>harbor_admin_password</strong> : 管理员初始密码。 这个密码仅仅是第一次安装并启动Harbor时有效。 之后再次启动时这个配将会被忽略，管理员密码在UI中可以被修改。注意， 默认的用户名/密码是 <strong>admin/Harbor12345</strong>。</li>
+<li><strong>auth_mode</strong>: 认证模式。默认为 <strong>db_auth</strong> , 认证信息存储到数据库中。对于LDAP认证， 需要设置 <strong>ldap_auth</strong> 。</li>
+</ul>
+<p><strong>注意</strong>: 当升级已有的Harbor实例的时候，在升级启动新版本的Harbor之前确认 <strong>auth_mode</strong> 配置与<code>harbor.cfg</code>中的配置相同。否者，已有用户无法在升级后登录系统。</p>
+<ul>
+<li><strong>ldap_url</strong>: LDAP服务的URL(如: <code>ldaps://ldap.yourdomain.com</code>)。 仅当 <strong>auth_mode</strong> 选项被设置为ldap_auth时，此配置项生效。</li>
+<li><strong>ldap_searchdn</strong>: 一个有搜索LDAP/AD服务器权限的用户的DN(如: `uid=admin,ou=people,dc=yourdomain,dc=com)。</li>
+<li><strong>ldap_search_pwd</strong>: <strong>ldap_searchdn</strong>配置指定的用户的密码。</li>
+<li><strong>ldap_basedn</strong>: 查找用户的基础DN，如: <code>ou=people,dc=yourdomain,dc=com</code>。仅当 <strong>auth_mode</strong> 选项被设置为ldap_auth时，此配置项生效。</li>
+<li><strong>ldap_filter</strong>: 用于搜索用户的查询过滤器(如: <code>objectClass=person</code>)。</li>
+<li><strong>ldap_uid</strong>: 这个属性用于在LDAP检索过程中去匹配用户，可以是uid, cn, email或者其它的属性。</li>
+<li><strong>ldap_scope</strong>: 搜索用户的范围，值及含义为: 1-LDAP_SCOPE_BASE, 2-LDAP_SCOPE_NOLEVEL, 3-LDAP_SCOPE_SUBTREE。默认为3。</li>
+<li><strong>self_registration</strong>: (<strong>on</strong> 或 <strong>off</strong>。默认为 <strong>on</strong>) 是否允许用户自己进行注册。当不允许用户自助注册时， 新用户只能由管理员来创建， 在Harbor中只有一个管理员可以创建新用户。 _注意:当 <strong>atuh_mode</strong>被设置为 <strong>ldap_auth</strong> 时，用户自助注册的功能会自动被关闭，这个配置项将被忽略。_</li>
+<li><strong>token_expiration</strong>: token服务创建的token超时的时间(分钟), 默认为30分钟。</li>
+<li><strong>project_creation_restriction</strong>: 这个配置项控制用户是否有权限去创建项目。默认每个人都可以创建项目，设置为”adminonly”为只有管理员可以创建项目。</li>
+</ul>
+<h4 id="配置存储-可选项"><a href="#配置存储-可选项" class="headerlink" title="配置存储(可选项)"></a>配置存储(可选项)</h4><p>默认情况下，Harbor会将镜像存储到本地文件系统。 但在某些环境中，你可能考虑使用其他的后端存储来代替本地文件系统，比如: S3, OpenStack Swift, Ceph等。 你可以通过更新配置文件<code>common/templates/registry/config.yml</code>中<code>storage</code>这个配置段来更改后端存储。例如，你使用OpenStack Swift作为你后端的存储，这个配置段的配置如下：</p>
+<pre><code>storage:
+  swift:
+    username: admin
+    password: ADMIN_PASS
+    authurl: http://keystone_addr:35357/v3/auth
+    tenant: admin
+    domain: default
+    region: regionOne
+    container: docker_images
+</code></pre><p><em>注意: 对于镜像库的后端存储的详细信息请参见: <a href="https://docs.docker.com/registry/configuration/" target="_blank" rel="external">Docker Registry配置说明</a></em></p>
+<h4 id="完成安装并启动Harbor"><a href="#完成安装并启动Harbor" class="headerlink" title="完成安装并启动Harbor"></a>完成安装并启动Harbor</h4><p>完成 <strong>harbor.cfg</strong> 与存储配置(可选配置项)的配置， 使用<code>install.sh</code>脚本完成安装并启动。注意，对于在线安装可能要花费一些时间从Docker hub下载镜像。 Harbor需要使用Docker Compose启动，请在运行<code>install.sh</code>脚本前安装，请参考: <a href="https://docs.docker.com/compose/install/" target="_blank" rel="external">Docker Compose安装说明</a>。</p>
+<pre><code>$ ./install.sh
+[Step 0]: checking installation environment ...
 
-    while (self._Popen.poll() == None and
-            (time.time() - self._start_time) &lt; self._timeout):
-        time.sleep(1)
+Note: docker version: 17.06.2
 
-    _r_code = self._Popen.poll()
+Note: docker-compose version: 1.17.0
 
-    # If child process has not exited yet, terminate it.
-    if self._Popen.poll() == None:
-        self._Popen.terminate()
-        _r_code = 254
+[Step 1]: loading Harbor images ...
+c5c1f3d43c8b: Loading layer [==================================================&gt;]  135.4MB/135.4MB
+62f93b2c84e5: Loading layer [==================================================&gt;]  72.99MB/72.99MB
+72842e5a36df: Loading layer [==================================================&gt;]  3.584kB/3.584kB
+478e65478cba: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+59b789abf78f: Loading layer [==================================================&gt;]  4.096kB/4.096kB
+004c30d5e900: Loading layer [==================================================&gt;]  3.584kB/3.584kB
+30c3b4c78f76: Loading layer [==================================================&gt;]  10.24kB/10.24kB
+Loaded image: vmware/harbor-log:v1.3.0-rc1
+454c81edbd3b: Loading layer [==================================================&gt;]  135.2MB/135.2MB
+bab81b4d4981: Loading layer [==================================================&gt;]  463.7MB/463.7MB
+5735a75e540c: Loading layer [==================================================&gt;]  9.216kB/9.216kB
+44394f38b0c9: Loading layer [==================================================&gt;]  9.216kB/9.216kB
+13775ef23512: Loading layer [==================================================&gt;]   7.68kB/7.68kB
+9d8d34eb8c97: Loading layer [==================================================&gt;]  1.536kB/1.536kB
+94af0237e276: Loading layer [==================================================&gt;]  9.216kB/9.216kB
+f1a95e05d345: Loading layer [==================================================&gt;]   2.56kB/2.56kB
+3ca7ba769253: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+Loaded image: vmware/harbor-db:v1.3.0-rc1
+e4813ce65d72: Loading layer [==================================================&gt;]  23.21MB/23.21MB
+3491428eff72: Loading layer [==================================================&gt;]  18.33MB/18.33MB
+22355de6ca70: Loading layer [==================================================&gt;]  18.33MB/18.33MB
+Loaded image: vmware/harbor-jobservice:v1.3.0-rc1
+11a7546bc950: Loading layer [==================================================&gt;]  90.74MB/90.74MB
+cd2cb03dfead: Loading layer [==================================================&gt;]  12.16MB/12.16MB
+fdcb5fa28b07: Loading layer [==================================================&gt;]   17.3MB/17.3MB
+eef410f82bbe: Loading layer [==================================================&gt;]  15.87kB/15.87kB
+938e5e2a4bad: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+558c91f2870a: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+Loaded image: vmware/notary-photon:server-0.5.1
+0e1b40dbb3d2: Loading layer [==================================================&gt;]  10.95MB/10.95MB
+58127bdab8e5: Loading layer [==================================================&gt;]   17.3MB/17.3MB
+2e3e9ac4492d: Loading layer [==================================================&gt;]  15.87kB/15.87kB
+bd6c57401b0f: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+08a6f4315b6a: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+Loaded image: vmware/notary-photon:signer-0.5.1
+e99db1275091: Loading layer [==================================================&gt;]  395.4MB/395.4MB
+051e4ee23882: Loading layer [==================================================&gt;]  9.216kB/9.216kB
+6cca4437b6f6: Loading layer [==================================================&gt;]  9.216kB/9.216kB
+1d48fc08c8bc: Loading layer [==================================================&gt;]   7.68kB/7.68kB
+0419724fd942: Loading layer [==================================================&gt;]  1.536kB/1.536kB
+92ce53616a73: Loading layer [==================================================&gt;]  599.2MB/599.2MB
+2004244b53a2: Loading layer [==================================================&gt;]  74.24kB/74.24kB
+Loaded image: vmware/harbor-db-migrator:1.3
+c116153f561a: Loading layer [==================================================&gt;]  23.21MB/23.21MB
+d82c9a7f1bce: Loading layer [==================================================&gt;]  7.071MB/7.071MB
+75e273c18f2a: Loading layer [==================================================&gt;]  7.071MB/7.071MB
+Loaded image: vmware/harbor-adminserver:v1.3.0-rc1
+Loaded image: vmware/photon:1.0
+Loaded image: vmware/mariadb-photon:10.2.10
+eecd294cdc4d: Loading layer [==================================================&gt;]  23.21MB/23.21MB
+848ebb86cbdd: Loading layer [==================================================&gt;]  22.71MB/22.71MB
+75c57475cadf: Loading layer [==================================================&gt;]  7.168kB/7.168kB
+3dd4619c78ff: Loading layer [==================================================&gt;]  5.381MB/5.381MB
+757114e3e191: Loading layer [==================================================&gt;]   22.7MB/22.7MB
+Loaded image: vmware/harbor-ui:v1.3.0-rc1
+cd0c2ef5af40: Loading layer [==================================================&gt;]  72.46MB/72.46MB
+Loaded image: vmware/nginx-photon:1.11.13
+7280dd18d4e6: Loading layer [==================================================&gt;]  90.74MB/90.74MB
+29de07437cda: Loading layer [==================================================&gt;]  2.048kB/2.048kB
+bf435791a668: Loading layer [==================================================&gt;]  2.048kB/2.048kB
+ea6923ed1a8e: Loading layer [==================================================&gt;]  2.048kB/2.048kB
+b39969acb12a: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+a07efc1d5b07: Loading layer [==================================================&gt;]   22.8MB/22.8MB
+Loaded image: vmware/registry:2.6.2-photon
+fe75aea3eba7: Loading layer [==================================================&gt;]  221.3MB/221.3MB
+ 50b4cd38d514: Loading layer [==================================================&gt;]  10.75MB/10.75MB
+5ffc09e42afb: Loading layer [==================================================&gt;]  2.048kB/2.048kB
+ee0b77dfb8f1: Loading layer [==================================================&gt;]  48.13kB/48.13kB
+f1f5fc6c106a: Loading layer [==================================================&gt;]   10.8MB/10.8MB
+Loaded image: vmware/clair:v2.0.1-photon
+418e636d0b27: Loading layer [==================================================&gt;]  161.5MB/161.5MB
+fb804e98cb47: Loading layer [==================================================&gt;]  6.656kB/6.656kB
+d961645df25c: Loading layer [==================================================&gt;]  6.656kB/6.656kB
+Loaded image: vmware/postgresql:9.6.5-photon
 
-    # Wait for the child process to exit.
-    time.sleep(1)
 
-    # If child process has not been terminated yet, kill it.
-    if self._Popen.poll() == None:
-        self._Popen.kill()
-        _r_code = 255
+[Step 2]: preparing environment ...
+Generated and saved secret to file: /data/secretkey
+Generated configuration file: ./common/config/nginx/nginx.conf
+Generated configuration file: ./common/config/adminserver/env
+Generated configuration file: ./common/config/ui/env
+Generated configuration file: ./common/config/registry/config.yml
+Generated configuration file: ./common/config/db/env
+Generated configuration file: ./common/config/jobservice/env
+Generated configuration file: ./common/config/log/logrotate.conf
+ Generated configuration file: ./common/config/jobservice/app.conf
+Generated configuration file: ./common/config/ui/app.conf
+Generated certificate, key file: ./common/config/ui/private_key.pem, cert file: ./common/config/registry/root.crt
+The configuration files are ready, please use docker-compose to start the service.
 
-    self._return_code = _r_code
-</code></pre><h3 id="对外的方法"><a href="#对外的方法" class="headerlink" title="对外的方法"></a>对外的方法</h3><p>外部调用的方法<code>start()</code>，使用此方法进行执行命令的调用。接收命令，超时时间，标准输入，标准输出，标准错误，是否使用tty(是否将结果输出到终端)，是否使用时间戳(返回结果中打印开始的时间)。此方法主要是调用内部执行命令的方法(_run())，然后对输出进行格式化。</p>
-<pre><code>def start(self,
-          cmd,
-          timeout=5*60*60,
-          stdin=None,
-          stdout=None,
-          stderr=None,
-          tty=False,
-          timestamp=False):
 
-    self._cmd = cmd
-    self._stdin = stdin
-    self._stdout = stdout
-    self._stderr = stderr
-    self._timeout = timeout
-    self._is_tty = tty
-    self._timestamp = timestamp
+[Step 3]: checking existing instance of Harbor ...
 
-    #Init output.
-    info = None
-    err = None
 
-    if self._timestamp:
-        start_time = time.strftime(&quot;%Y-%m-%d %X&quot;, time.localtime())
-        file_start = &quot;Start Time: &quot; + start_time + &quot;\n&quot;
-    else:
-        file_start = &quot;&quot;
-        file_end = &quot;&quot;
+[Step 4]: starting Harbor ...
+Creating network &quot;harbor_harbor&quot; with the default driver
+Creating harbor-log ... 
+Creating harbor-log ... done
+Creating harbor-adminserver ... 
+Creating registry ... 
+Creating harbor-db ... 
+Creating harbor-adminserver
+Creating harbor-db
+Creating registry ... done
+Creating harbor-db ... done
+Creating harbor-ui ... done
+Creating harbor-jobservice ... 
+Creating nginx ... 
+Creating harbor-jobservice
+Creating nginx ... done
 
-    try:
-        #Init the file handle of output.
-        if self._is_tty:
-            self._stdout_fd = None
-            self._stderr_fd = None
+✔ ----Harbor has been installed and started successfully.----
 
-        elif (self._stdout is None or
-            self._stderr is None or
-            self._stdout == self._stderr):
-
-            self._stdout_fd = tempfile.TemporaryFile()
-            self._stderr_fd = tempfile.TemporaryFile()
-
-        else:
-            self._stdout_fd = self._create_handler(self._stdout)
-            self._stderr_fd = self._create_handler(self._stderr)
-            self._stdout_fd.write(file_start)
-            self._stdout_fd.flush()
-            self._stderr_fd.write(file_start)
-            self._stderr_fd.flush()
-
-        self._run()
-
-        if self._timestamp:
-            end_time = time.strftime(&quot;%Y-%m-%d %X&quot;, time.localtime())
-            file_end = &quot;End Time: &quot; + end_time + &quot;\n&quot;
-
-        #Write and Read output content.
-        if not self._is_tty:
-            self._stdout_fd.write(file_end)
-            self._stderr_fd.write(file_end)
-
-            self._stdout_fd.flush()
-            self._stderr_fd.flush()
-
-            self._stdout_fd.seek(0)
-            self._stderr_fd.seek(0)
-            info = file_start + self._stdout_fd.read() + file_end
-            err = file_start + self._stderr_fd.read() + file_end
-    finally:
-        #Close file handle.
-        if not self._is_tty:
-            self._stdout_fd.close()
-            self._stderr_fd.close()
-
-    return {&quot;code&quot;:self._return_code,
-            &quot;stdout&quot;:info,
-            &quot;stderr&quot;:err
-            }
-</code></pre><p>  这里输出分为3种类型：</p>
-<ol>
-<li>直接输出到终端，设置tty=True即可，就是直接打印到终端。</li>
-<li>输出到临时文件中，如果tty=False，并且没有输入指定的log文件（stdout和stderr），某块会自动创建一个临时文件来记录日志。</li>
-<li>输出到指定日志中，设置了输出日志，会将命令执行的标准输出和标准错误输出到指定日志文件中（实时输出）。</li>
-</ol>
-<p>*注意: 如果设置使用输出到tty，最终start()方法只会返回命令执行的状态码，不会返回执行结果（已经输出到终端），使用临时文件作为日志或指定输出日志文件，最终start()方法会最终将日志返回给调用的程序。</p>
-<h3 id="对日志处理的方法"><a href="#对日志处理的方法" class="headerlink" title="对日志处理的方法"></a>对日志处理的方法</h3><p>创建日志文件，初始化日志句柄。</p>
-<pre><code>#Create file handle.
-def _create_handler(self, filename):
-    if isinstance(filename, file):
-        return filename
-    elif isinstance(filename, basestring):
-        path = os.path.dirname(filename)
-        timestamp = time.strftime(&quot;%Y%m%d%H%M%S&quot;, time.localtime())
-
-        if not os.path.exists(path):
-            os.makedirs(path)
-        elif os.path.exists(filename) and not os.path.isfile(filename):
-            backup_name = filename + timestamp
-            os.rename(filename, backup_name)
-
-        fd = open(filename, &apos;a+b&apos;)
-        return fd
-    else:
-        raise &quot;The type of \&apos;filename\&apos; must be \&apos;file\&apos; or \&apos;basestring\&apos;&quot;
-</code></pre><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><code>SubWork</code>使用方法如下:</p>
-<pre><code>import SubWork
-
-cmd = &quot;/bin/ls /tmp&quot;
-worker = SubWork()
-res = worker.start(cmd, 300， &quot;/tmp/stdout.log&quot;, &quot;/tmp/stderr.log&quot;)
-print res
-</code></pre><p>这里会执行<code>/bin/ls /tmp</code>命令，超时时间300秒，将执行的标准输出实时输出到<code>/tmp/stdout.log</code>中，将输出的标准错误实时输出到<code>/tmp/stderr.log</code> 中，最终<code>res</code>变量中会有命令执行的状态码和命令执行的输出结果。</p>
+Now you should be able to visit the admin portal at http://reg.youerdomain.com. 
+For more details, please visit https://github.com/vmware/harbor .
+</code></pre><p>如果所有组件都已经开始工作，你可以启动浏览器访问管理页面”<a href="http://reg.yourdomain.com&quot;。注意，默认的管理员用户名/密码是admin/Harbor12345。" target="_blank" rel="external">http://reg.yourdomain.com&quot;。注意，默认的管理员用户名/密码是admin/Harbor12345。</a></p>
+<p>登录到管理页面并创建一个新的工程，如<code>myproject</code>。之后可用用docker命令登录并推送image(默认的Registry的服务监听在80端口)。</p>
+<p>具体登录及推送过程和使用Docker Registry一样，不再具体演示了。</p>
 
         
     
@@ -696,19 +763,19 @@ print res
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/09/11/markdown/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/11/28/docker-registry-management/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
