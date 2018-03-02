@@ -39,7 +39,7 @@
     
     <title>
         
-            Docker系列(二):镜像管理 | 
+            Archives: 2018/3 | 
         
         Jason
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jason">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",docker">
+    <meta name="keywords" content="">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -237,18 +237,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://kidnet.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Docker系列(二):镜像管理 | Jason">
+    <meta property="og:title" content="Archives: 2018/3 | Jason">
     <meta property="og:image" content="http://kidnet.github.io/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="docker"> 
-
     
-        <meta property="article:published_time" content="Sun Oct 29 2017 15:32:20 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Nov 28 2017 14:06:40 GMT+0800" />
+
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Docker系列(二):镜像管理 | Jason">
+    <meta name="twitter:title" content="Archives: 2018/3 | Jason">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://kidnet.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -256,43 +253,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://kidnet.github.io/2017/10/29/docker-image-management/index.html" />
+        <link rel="canonical" href="http://kidnet.github.io/archives/2018/03/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "http://kidnet.github.io/2017/10/29/docker-image-management/index.html",
-    "headline": "Docker系列(二):镜像管理",
-    "datePublished": "Sun Oct 29 2017 15:32:20 GMT+0800",
-    "dateModified": "Tue Nov 28 2017 14:06:40 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "Jason",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/my_avatar.png"
-        },
-        "description": "Life is short, you need Python"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Jason",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": ",docker",
-    "description": "",
-}
-</script>
 
 
     
@@ -334,429 +301,93 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#镜像管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">镜像管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-获取镜像"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 获取镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-本地镜像"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 本地镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-镜像制作"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. 镜像制作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-镜像推送"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4. 镜像推送</span></a></li></ol></li></ol>
-    </ul>
+    <!-- Pin on top -->
     
 
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
+        
+    
 
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2018/03/02/docker-sshd/">Docker镜像中开启SSH</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            简介有需求在镜像中...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2018/03/02/docker-sshd/" target="_self">Read more</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/my_avatar.png" width="44px" height="44px" alt="Jason's avatar">
+            </div>
+            <div>
+                <strong>Jason</strong>
+                <span>Mar 02, 2018</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
 </script>
 
-        
-    
-            <p class="article-headline-p">
-                Docker系列(二):镜像管理
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/my_avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Jason</strong>
-        <span>Oct 29, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/docker/">docker</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    <!-- Leancloud Views -->
-        <a class="post_share-link" href="#">
-            <li class="mdl-menu__item">
-                <span id="/2017/10/29/docker-image-management/" class="leancloud-views_num" data-flag-title="Docker系列(二):镜像管理">
-     &nbsp;Views
-</span>
-
-            </li>
-        </a>
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker系列(二):镜像管理&url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Weibo
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker系列(二):镜像管理&url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html&via=Jason" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://kidnet.github.io/2017/10/29/docker-image-management/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://kidnet.github.io/2017/10/29/docker-image-management/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Docker的容器是基于镜像的，所有容器是通过制作好的镜像启动的，下面会介绍镜像的管理和容器的管理。</p>
-<h2 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h2><p>Docker的镜像可以通过多种途径获取，获取镜像后将镜像存入本地镜像库中，以供容器使用。</p>
-<h3 id="1-获取镜像"><a href="#1-获取镜像" class="headerlink" title="1. 获取镜像"></a>1. 获取镜像</h3><p>镜像可以从公共镜像库中获取(类似yum源)，也可以自己制作，或导入已有镜像(从别的Docker导出的或OpenVZ一类虚拟化软件中导出的)。</p>
-<ul>
-<li>从公共镜像库中获取镜像</li>
-</ul>
-<p>使用<code>docker pull &lt;image_name&gt;[:tag]</code>命令从公共镜像库中获取镜像: </p>
-<pre><code>$ docker pull centos
-Using default tag: latest
-latest: Pulling from library/centos
-d9aaf4d82f24: Pull complete 
-Digest: sha256:4565fe2dd7f4770e825d4bd9c761a81b26e49cc9e3c9631c58cfc3188be9505a
-Status: Downloaded newer image for centos:latest
-</code></pre><p>不指定<code>tag</code>的会自动选择使用<code>latest</code>标签。</p>
-<p>公共镜像库支持查询功能，可以先使用<code>docker search &lt;image_name&gt;</code>查询需要的镜像是否存在:</p>
-<pre><code>$ docker search centos
-NAME                               DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-centos                             The official build of CentOS.                   3789      [OK]       
-ansible/centos7-ansible            Ansible on Centos7                              103                  [OK]
-jdeathe/centos-ssh                 CentOS-6 6.9 x86_64 / CentOS-7 7.4.1708 x8...   89                   [OK]
-tutum/centos                       Simple CentOS docker image with SSH access      33                   
-imagine10255/centos6-lnmp-php56    centos6-lnmp-php56                              31                   [OK]
-gluster/gluster-centos             Official GlusterFS Image [ CentOS-7 +  Glu...   21                   [OK]
-kinogmt/centos-ssh                 CentOS with SSH                                 17                   [OK]
-......
-</code></pre><ul>
-<li>导入镜像 </li>
-</ul>
-<p>使用<code>docker load &lt; &lt;image_file_name&gt;</code>导入从其他Docker导出的镜像:</p>
-<pre><code>$ docker load &lt; centos-sshd
-36018b5e9787: Loading layer [==================================================&gt;]  200.1MB/200.1MB
-56ab33f0cb6c: Loading layer [==================================================&gt;]  61.48MB/61.48MB
-52d118e898dd: Loading layer [==================================================&gt;]  21.99MB/21.99MB
-52e44758f62d: Loading layer [==================================================&gt;]  1.678MB/1.678MB
-6f88bf69d4eb: Loading layer [==================================================&gt;]  1.707MB/1.707MB
-5afae9f25cde: Loading layer [==================================================&gt;]  1.787MB/1.787MB
-Loaded image ID: sha256:b8c73db541e787c15f8acdb892cebc41a00e8a1b257b02aa9b0be921f58d6426    
-</code></pre><p>使用<code>cat &lt;openvz_image_file_name&gt; | docker import - &lt;image_name&gt;:&lt;tag&gt;</code>导入从虚拟化软件(OpenVZ)导出的镜像:</p>
-<pre><code>$ cat centos-6-x86_64.tar.gz | docker import - centos:6
-sha256:54152fdb34278505a2007911a211ccd6d1d78dd946522bf797f2cf971efb89cf
-</code></pre><p>(<a href="https://openvz.org/Download/template/precreated" target="_blank" rel="external">OpenVZ镜像下载地址</a>)</p>
-<h3 id="2-本地镜像"><a href="#2-本地镜像" class="headerlink" title="2. 本地镜像"></a>2. 本地镜像</h3><p>启动容器的镜像都是在本地镜像库中，对本地镜像库可以进行管理(删除，标签管理等)。</p>
-<ul>
-<li>本地镜像列表</li>
-</ul>
-<p>管理本地镜像需要了解本地已存在的镜像:</p>
-<pre><code>$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-centos              6                   54152fdb3427        17 minutes ago      825MB
-centos              latest              d123f4e55e12        3 days ago          197MB
-centos-sshd         latest              b8c73db541e7        6 months ago        280MB
-</code></pre><p>本地镜像中会列出镜像名称，id及tag(版本)。</p>
-<ul>
-<li>删除本地镜像</li>
-</ul>
-<p>如果本地镜像过多，有些过时的镜像，或者不再使用的镜像，需要被删除时，可以使用以下命令:</p>
-<pre><code>$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-centos-sshd         latest              b8c73db541e7        6 months ago        280MB
-
-#docker rmi &lt;image_name&gt;:&lt;tag&gt; 
-$ docker rmi centos-sshd：latest
-Untagged: centos-sshd:latest
-Deleted: sha256:b8c73db541e787c15f8acdb892cebc41a00e8a1b257b02aa9b0be921f58d6426
-Deleted: sha256:5fdcd47722d29774d897562430801f6d1c168a422bcce5de1a6ace65302f900d
-Deleted: sha256:4e8a967d0d44bbd801c7787c2f750036988f92f28aeb76feb83293421de32a5d
-Deleted: sha256:50691d2b55b131e1ee4ccee1981556c631f55bb9f57269ceb00cf71c0b0e13bd
-Deleted: sha256:a84fc4ac805b0593c8e7a61a4d774f261cc4a4de6db1ff812c02b8524127d91b
-Deleted: sha256:0f8d19a2914ef598af3cc2dc8861b78b4b0d3b848d4eae97f2c81ba8e9f55015
-Deleted: sha256:36018b5e978717a047892794aebab513ba6856dbe1bdfeb478ca1219df2c7e9c
-
-#检查镜像是否已被删除(唯一的一个本地镜像已被删除)
-$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-</code></pre><p>如果一个镜像有多个tag的话，只会删除此tag:</p>
-<pre><code>$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-centos-sshd         7.2                 b8c73db541e7        6 months ago        280MB
-centos-sshd         latest              b8c73db541e7        6 months ago        280MB
-
-$ docker rmi centos-sshd：latest
-Untagged: centos-sshd:latest #提示只是删除了镜像的一个tag
-
-$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-centos-sshd         7.2                 b8c73db541e7        6 months ago        280MB     
-</code></pre><p>使用镜像ID删除镜像(无论有多少个tag，都会先删除tag，然后彻底删除镜像):</p>
-<pre><code>#dokcer rmi &lt;image_id&gt;
-$ docker rmi d123f4e55e12
-Untagged: centos-sshd:7.2
-Deleted: sha256:b8c73db541e787c15f8acdb892cebc41a00e8a1b257b02aa9b0be921f58d6426
-Deleted: sha256:5fdcd47722d29774d897562430801f6d1c168a422bcce5de1a6ace65302f900d
-Deleted: sha256:4e8a967d0d44bbd801c7787c2f750036988f92f28aeb76feb83293421de32a5d
-Deleted: sha256:50691d2b55b131e1ee4ccee1981556c631f55bb9f57269ceb00cf71c0b0e13bd
-Deleted: sha256:a84fc4ac805b0593c8e7a61a4d774f261cc4a4de6db1ff812c02b8524127d91b
-Deleted: sha256:0f8d19a2914ef598af3cc2dc8861b78b4b0d3b848d4eae97f2c81ba8e9f55015
-Deleted: sha256:36018b5e978717a047892794aebab513ba6856dbe1bdfeb478ca1219df2c7e9c
-</code></pre><p> *注: 如果此镜像被其他镜像依赖，无法删除(后面会介绍依赖关系)。</p>
-<ul>
-<li>导出镜像</li>
-</ul>
-<p>有时可能需要从一个Docker中导出镜像到另一个Docker中，导出本地镜像的方法如下:</p>
-<pre><code>$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-centos-sshd         latest              b8c73db541e7        6 months ago        280MB
-
-#docker save &lt;image_id&gt; &gt; &lt;export_image_name&gt;
-$docker save b8c73db541e7 &gt; centos-sshd
-$ls
-centso-sshd
-</code></pre><h3 id="3-镜像制作"><a href="#3-镜像制作" class="headerlink" title="3. 镜像制作"></a>3. 镜像制作</h3><p>有时标准镜像的内容无法满足我们的需求，这时就需要自己制作镜像，这里介绍的制作镜像的方法是基于已有镜像，或将一个启动的容器提交为一个镜像。</p>
-<ul>
-<li>基于已有镜像制作镜像</li>
-</ul>
-<p>使用Dockerfile基于已有镜像制作新的镜像，一个简单的Dockerfile：</p>
-<pre><code># Use an official Python runtime as a parent image
-FROM python:2.7-slim
-
-# Set the working directory to /app
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-ADD . /app
-
-# Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
-
-# Make port 80 available to the world outside this container
-EXPOSE 80
-
-# Define environment variable
-ENV NAME World
-
-# Run app.py when the container launches
-CMD [&quot;python&quot;, &quot;app.py&quot;]
-</code></pre><p>上面Dockerfile中制作了一个python应用的镜像(Dockerfile中可以同时定义容器的启动的参数，后面会详细介绍)，需要<code>requirements.txt</code>(运行这个python应用需要的模块)和<code>app.py</code>(python应用)，这两个文件需要和Dockerfile在同一个目录中(<code>ADD . /app</code>定义的)：</p>
-<pre><code>$ ls
-Dockerfile        app.py            requirements.txt
-</code></pre><p>最后使用以下命令制作镜像:</p>
-<pre><code>docker build -t firstapp .
-</code></pre><p>在本地镜像库可以看到刚刚生成的镜像:</p>
-<pre><code>$ docker images
-
-REPOSITORY            TAG                 IMAGE ID
-firstapp         latest              326387cea398
-</code></pre><ul>
-<li>基于容器制作镜像</li>
-</ul>
-<p>想对已有镜像做简单修改，或者不习惯于写Dockerfile，可以使用镜像启动一个容器，然后在容器中对系统进行修改，修改后将内容重新提交为一个新的镜像:</p>
-<pre><code>$ docker commit &lt;container_id&gt; &lt;image_name&gt;:[&lt;tag&gt;]
-</code></pre><h3 id="4-镜像推送"><a href="#4-镜像推送" class="headerlink" title="4. 镜像推送"></a>4. 镜像推送</h3><p>将本地镜像(自己制作的镜像)，推送到镜像库(多用于私有镜像库，如是公共项目提交到公共镜像库)。</p>
-<ul>
-<li>推送到公共镜像库</li>
-</ul>
-<p>将自己制作的镜像，推送到公共镜像库，需要有对应镜像库的权限(登录认证)，才可以推送到对应的镜像库中。</p>
-<p>登录到公共镜像库:</p>
-<pre><code>$ docker login
-Login with your
-Docker ID to push and pull images from Docker Hub. If you don&apos;t have a Docker
-ID, head over to https://hub.docker.com to
-create one.
-Username: test #Your login name
-Password:
-Login Succeeded
-</code></pre><p>*可以到<a href="http://hub.docker.com" target="_blank" rel="external">Docker公共镜像库</a>创建账号，建立自己的镜像库(类似于github)。</p>
-<p>推送镜像:</p>
-<pre><code>$ docker push &lt;login_name&gt;/&lt;image_name&gt;:&lt;tag&gt;
-
-$ docker push test/firstapp:last
-The push refers to a
-repository [docker.io/test/firstapp]
-34e7b85d83e4: Pushed 
-last: 
-digest:sha256:dafc45b8b533d5ad5564a3821e9e1a252b58f44e69c6052bddcd00139782ee08     
-size:529
-</code></pre><ul>
-<li>推送到私有镜像库</li>
-</ul>
-<p>有时自己的镜像不想被别人看到，这时可以搭建自己的私有镜像库(后续会介绍)，然后将自己的镜像提交到私有的镜像库。</p>
-<p>私有镜像库可以不需要登录(如果需要登录，登录过程和提交到公有镜像库一样)，先给需要提交的镜像设置一个<code>tag</code>，<code>tag</code>中将私有镜像库的地址写入即可(IP，hostname或域名):</p>
-<pre><code>$ docker &lt;image_id&gt; &lt;private_registry_address&gt;/&lt;image_name&gt;:&lt;tag&gt;
-
-$ docker tag 34e7b85d83e4 10.236.100.3:5000/firstapp:last
-$ docker push 10.236.100.3:5000/firstapp:last
-repository [10.236.100.3:5000/firstapp]
-acce4ec5f074: Pushed
-5d450a8c7e38: Pushed
-e8fd5087fa08: Pushed
-cf394a2f01e4: Pushed
-f16d5ac23cee: Pushed
-57861a68f43a: Pushed
-97ca462ad9ee: Pushed
-last: 
-digest:sha256:b0851324bac55083172ed2068dfb388acabdce14dffdb9787f4e6c044b524f19     
-size:1764
-</code></pre>
-        
-    
-
     
 </div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/11/22/docker-container-management/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/09/19/docker-install/" id="post_nav-older" class="next-content">
-            Older
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
 
 
                     
