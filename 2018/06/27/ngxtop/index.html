@@ -39,7 +39,7 @@
     
     <title>
         
-            Tag: Python | 
+            ngxtop：Linux中实时监控Nginx Log | 
         
         Jason
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jason">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",web server">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -237,15 +237,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://kidnet.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Tag: Python | Jason">
+    <meta property="og:title" content="ngxtop：Linux中实时监控Nginx Log | Jason">
     <meta property="og:image" content="http://kidnet.github.io/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="web server"> 
 
+    
+        <meta property="article:published_time" content="Wed Jun 27 2018 10:59:11 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Jun 27 2018 15:20:38 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Tag: Python | Jason">
+    <meta name="twitter:title" content="ngxtop：Linux中实时监控Nginx Log | Jason">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://kidnet.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -253,13 +256,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://kidnet.github.io/tags/Python/index.html" />
+        <link rel="canonical" href="http://kidnet.github.io/2018/06/27/ngxtop/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://kidnet.github.io/2018/06/27/ngxtop/index.html",
+    "headline": "ngxtop：Linux中实时监控Nginx Log",
+    "datePublished": "Wed Jun 27 2018 10:59:11 GMT+0800",
+    "dateModified": "Wed Jun 27 2018 15:20:38 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Jason",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/my_avatar.png"
+        },
+        "description": "Life is short, you need Python"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jason",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",web server",
+    "description": "",
+}
+</script>
 
 
     
@@ -301,98 +334,294 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在Linux中的安装和使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">在Linux中的安装和使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#监控Nginx服务的请求状态"><span class="post-toc-number">2.</span> <span class="post-toc-text">监控Nginx服务的请求状态</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出示例"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">输出示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析不同的访问日志"><span class="post-toc-number">3.</span> <span class="post-toc-text">解析不同的访问日志</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出示例-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">输出示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用特殊的Log格式"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用特殊的Log格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从远程服务器解析Apache的Log"><span class="post-toc-number">5.</span> <span class="post-toc-text">从远程服务器解析Apache的Log</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出示例-2"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">输出示例</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/08/subprocess_with_timeout/">带有超时设置的subprocess</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            背景在使用subp...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/08/subprocess_with_timeout/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/my_avatar.png" width="44px" height="44px" alt="Jason's avatar">
-            </div>
-            <div>
-                <strong>Jason</strong>
-                <span>Sep 08, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Python/">Python</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                ngxtop：Linux中实时监控Nginx Log
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/my_avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jason</strong>
+        <span>Jun 27, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/web-server/">web server</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/06/27/ngxtop/" class="leancloud-views_num" data-flag-title="ngxtop：Linux中实时监控Nginx Log">
+     &nbsp;Views
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ngxtop：Linux中实时监控Nginx Log&url=http://kidnet.github.io/2018/06/27/ngxtop/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ngxtop：Linux中实时监控Nginx Log&url=http://kidnet.github.io/2018/06/27/ngxtop/index.html&via=Jason" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://kidnet.github.io/2018/06/27/ngxtop/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://kidnet.github.io/2018/06/27/ngxtop/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>原文地址: <a href="https://www.tecmint.com/ngxtop-monitor-nginx-log-files-in-real-time-in-linux" target="_blank" rel="external">https://www.tecmint.com/ngxtop-monitor-nginx-log-files-in-real-time-in-linux</a></p>
+</blockquote>
+<p>ngxtop是一个免费的开源工具，简单，灵活，可配置的，并且易于使用，类似于top一样，是对Nginx服务进行实时监控的工具。它通过分析nginx access log来获取数据(默认路径是/var/log/nginx/access.log)并且显示对于你的nginx服务器有用的一些指标（如:访问量，访问流量，http各个状态的统计等）。</p>
+<h2 id="在Linux中的安装和使用"><a href="#在Linux中的安装和使用" class="headerlink" title="在Linux中的安装和使用"></a>在Linux中的安装和使用</h2><p>ngxtop是使用python语言开发的一个工具，安装ngxtop，首先需要安装pip（或其他python包的安装工具，或者直接下载源码包进行安装），如果你已经安装pip在你的系统上，你可以使用以下的命令安装ngxtop。</p>
+<pre><code>$ sudo pip install ngxtop
+</code></pre><h2 id="监控Nginx服务的请求状态"><a href="#监控Nginx服务的请求状态" class="headerlink" title="监控Nginx服务的请求状态"></a>监控Nginx服务的请求状态</h2><p>现在你已经安装好了ngxtop，最简单的方法来运行它，不需要任何参数。它将会解析/var/log/nginx/access.log并且默认运行在实时模式下(会监控新写入access log的每一行)。</p>
+<pre><code>$ sudo ngxtop
+</code></pre><h3 id="输出示例"><a href="#输出示例" class="headerlink" title="输出示例"></a>输出示例</h3><pre><code>running for 411 seconds, 64332 records processed: 156.60 req/sec
+Summary:
+|   count |   avg_bytes_sent |   2xx |   3xx |   4xx |   5xx |
+|---------+------------------+-------+-------+-------+-------|
+|   64332 |         2775.251 | 61262 |  2994 |    71 |     5 |
+Detailed:
+| request_path                             |   count |   avg_bytes_sent |   2xx |   3xx |   4xx |   5xx |
+|------------------------------------------+---------+------------------+-------+-------+-------+-------|
+| /abc/xyz/xxxx                            |   20946 |          434.693 | 20935 |     0 |    11 |     0 |
+| /xxxxx.json                              |    5633 |         1483.723 |  5633 |     0 |     0 |     0 |
+| /xxxxx/xxx/xxxxxxxxxxxxx                 |    3629 |         6835.499 |  3626 |     0 |     3 |     0 |
+| /xxxxx/xxx/xxxxxxxx                      |    3627 |        15971.885 |  3623 |     0 |     4 |     0 |
+| /xxxxx/xxx/xxxxxxx                       |    3624 |         7830.236 |  3621 |     0 |     3 |     0 |
+| /static/js/minified/utils.min.js         |    3031 |         1781.155 |  2104 |   927 |     0 |     0 |
+| /static/js/minified/xxxxxxx.min.v1.js    |    2889 |         2210.235 |  2068 |   821 |     0 |     0 |
+| /static/tracking/js/xxxxxxxx.js          |    2594 |         1325.681 |  1927 |   667 |     0 |     0 |
+| /xxxxx/xxx.html                          |    2521 |          573.597 |  2520 |     0 |     1 |     0 |
+| /xxxxx/xxxx.json                         |    1840 |          800.542 |  1839 |     0 |     1 |     0 |
+</code></pre><p>使用<code>Ctrl+C</code>退出。</p>
+<h2 id="解析不同的访问日志"><a href="#解析不同的访问日志" class="headerlink" title="解析不同的访问日志"></a>解析不同的访问日志</h2><p>你可以使用<code>-l</code>参数解析不同的访问日志，如特定的网站或Web应用程序，如下所示。</p>
+<pre><code>$ sudo ngxtop -l /var/log/nginx/site1/access.log
+</code></pre><h3 id="输出示例-1"><a href="#输出示例-1" class="headerlink" title="输出示例"></a>输出示例</h3><pre><code>running for 20 seconds, 3215 records processed: 159.62 req/sec
+top remote_addr
+| remote_addr     |   count |
+|-----------------+---------|
+| 118.173.177.161 |      20 |
+| 110.78.145.3    |      16 |
+| 171.7.153.7     |      16 |
+| 180.183.67.155  |      16 |
+| 183.89.65.9     |      16 |
+| 202.28.182.5    |      16 |
+| 1.47.170.12     |      15 |
+| 119.46.184.2    |      15 |
+| 125.26.135.219  |      15 |
+| 125.26.213.203  |      15 |
+</code></pre><h2 id="使用特殊的Log格式"><a href="#使用特殊的Log格式" class="headerlink" title="使用特殊的Log格式"></a>使用特殊的Log格式</h2><p>要使用nginx配置文件中的log_format指定的日志格式，用参数<code>-f</code>来指定，如下所示</p>
+<pre><code>$ sudo ngxtop -f main -l /var/log/nginx/site1/access.log
+</code></pre><h2 id="从远程服务器解析Apache的Log"><a href="#从远程服务器解析Apache的Log" class="headerlink" title="从远程服务器解析Apache的Log"></a>从远程服务器解析Apache的Log</h2><p>使用通用格式从远程服务器来解析Apache的log文件，用类似以下的命令(指定你的用户名和远程服务器的IP)。</p>
+<pre><code>$ ssh user@remote_server tail -f /var/log/apache2/access.log | ngxtop -f common
+</code></pre><h3 id="输出示例-2"><a href="#输出示例-2" class="headerlink" title="输出示例"></a>输出示例</h3><pre><code>running for 20 seconds, 1068 records processed: 53.01 req/sec
+Summary:
+|   count |   avg_bytes_sent |   2xx |   3xx |   4xx |   5xx |
+|---------+------------------+-------+-------+-------+-------|
+|    1068 |        28026.763 |  1029 |    20 |    19 |     0 |
+Detailed:
+| request_path                             |   count |   avg_bytes_sent |   2xx |   3xx |   4xx |   5xx |
+|------------------------------------------+---------+------------------+-------+-------+-------+-------|
+| /xxxxxxxxxx                              |     199 |        55150.402 |   199 |     0 |     0 |     0 |
+| /xxxxxxxx/xxxxx                          |     167 |        47591.826 |   167 |     0 |     0 |     0 |
+| /xxxxxxxxxxxxx/xxxxxx                    |      25 |         7432.200 |    25 |     0 |     0 |     0 |
+| /xxxx/xxxxx/x/xxxxxxxxxxxxx/xxxxxxx      |      22 |          698.727 |    22 |     0 |     0 |     0 |
+| /xxxx/xxxxx/x/xxxxxxxxxxxxx/xxxxxx       |      19 |         7431.632 |    19 |     0 |     0 |     0 |
+| /xxxxx/xxxxx/                            |      18 |         7840.889 |    18 |     0 |     0 |     0 |
+| /xxxxxxxx/xxxxxxxxxxxxxxxxx              |      15 |         7356.000 |    15 |     0 |     0 |     0 |
+| /xxxxxxxxxxx/xxxxxxxx                    |      15 |         9978.800 |    15 |     0 |     0 |     0 |
+| /xxxxx/                                  |      14 |            0.000 |     0 |    14 |     0 |     0 |
+| /xxxxxxxxxx/xxxxxxxx/xxxxx               |      13 |        20530.154 |    13 |     0 |     0 |     0 |
+</code></pre><p>更多的使用选项，请使用下面的命令来查看ngxtop的帮助信息。</p>
+<pre><code>$ ngxtop -h
+</code></pre><p><strong>ngxtop项目Github的地址: <a href="https://github.com/lebinh/ngxtop" target="_blank" rel="external">https://github.com/lebinh/ngxtop</a></strong></p>
+
+        
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/02/docker-sshd/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -553,6 +782,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
