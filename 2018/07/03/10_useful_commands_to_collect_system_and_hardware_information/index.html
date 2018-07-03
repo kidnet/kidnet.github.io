@@ -39,7 +39,7 @@
     
     <title>
         
-            Docker系列(一):安装 | 
+            采集系统和硬件信息的10个命令 | 
         
         Jason
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Jason">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",docker">
+    <meta name="keywords" content=",Linux">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -237,18 +237,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://kidnet.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Docker系列(一):安装 | Jason">
+    <meta property="og:title" content="采集系统和硬件信息的10个命令 | Jason">
     <meta property="og:image" content="http://kidnet.github.io/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="docker"> 
+    <meta property="og:article:tag" content="Linux"> 
 
     
-        <meta property="article:published_time" content="Tue Sep 19 2017 18:04:08 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Nov 28 2017 14:06:27 GMT+0800" />
+        <meta property="article:published_time" content="Tue Jul 03 2018 14:06:11 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Jul 03 2018 16:03:34 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Docker系列(一):安装 | Jason">
+    <meta name="twitter:title" content="采集系统和硬件信息的10个命令 | Jason">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://kidnet.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -256,7 +256,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://kidnet.github.io/2017/09/19/docker-install/index.html" />
+        <link rel="canonical" href="http://kidnet.github.io/2018/07/03/10_useful_commands_to_collect_system_and_hardware_information/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -268,10 +268,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://kidnet.github.io/2017/09/19/docker-install/index.html",
-    "headline": "Docker系列(一):安装",
-    "datePublished": "Tue Sep 19 2017 18:04:08 GMT+0800",
-    "dateModified": "Tue Nov 28 2017 14:06:27 GMT+0800",
+    "mainEntityOfPage": "http://kidnet.github.io/2018/07/03/10_useful_commands_to_collect_system_and_hardware_information/index.html",
+    "headline": "采集系统和硬件信息的10个命令",
+    "datePublished": "Tue Jul 03 2018 14:06:11 GMT+0800",
+    "dateModified": "Tue Jul 03 2018 16:03:34 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jason",
@@ -289,7 +289,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",docker",
+    "keywords": ",Linux",
     "description": "",
 }
 </script>
@@ -363,7 +363,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yum安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">yum安装:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装docker源"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装docker源</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装docker"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装docker</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二进制包安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">二进制包安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装静态二进制"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装静态二进制</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-如何查看Linux系统信息"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 如何查看Linux系统信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-如何查看Linux系统硬件信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 如何查看Linux系统硬件信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-如何显示CPU信息"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 如何显示CPU信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-如何收集Linux块设备信息"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 如何收集Linux块设备信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-如何打印USB控制器的信息"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. 如何打印USB控制器的信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-如何打印PCI设备的信息"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. 如何打印PCI设备的信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-如何打印SCSI设备的信息"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. 如何打印SCSI设备的信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-如何打印关于SATA设备的信息"><span class="post-toc-number">8.</span> <span class="post-toc-text">8. 如何打印关于SATA设备的信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-如何打印Linux文件系统的信息"><span class="post-toc-number">9.</span> <span class="post-toc-text">9. 如何打印Linux文件系统的信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-如何提取硬件组件的信息"><span class="post-toc-number">10.</span> <span class="post-toc-text">10. 如何提取硬件组件的信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">11.</span> <span class="post-toc-text">总结</span></a></li></ol>
     </ul>
     
 
@@ -395,7 +395,7 @@
         
     
             <p class="article-headline-p">
-                Docker系列(一):安装
+                采集系统和硬件信息的10个命令
             </p>
         </div>
 
@@ -414,7 +414,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jason</strong>
-        <span>Sep 19, 2017</span>
+        <span>Jul 03, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -438,7 +438,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/docker/">docker</a>
+        <a class="post_tag-link" href="/tags/Linux/">Linux</a>
     </ul>
     
 
@@ -452,7 +452,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/09/19/docker-install/" class="leancloud-views_num" data-flag-title="Docker系列(一):安装">
+                <span id="/2018/07/03/10_useful_commands_to_collect_system_and_hardware_information/" class="leancloud-views_num" data-flag-title="采集系统和硬件信息的10个命令">
      &nbsp;Views
 </span>
 
@@ -464,7 +464,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker系列(一):安装&url=http://kidnet.github.io/2017/09/19/docker-install/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=采集系统和硬件信息的10个命令&url=http://kidnet.github.io/2018/07/03/10_useful_commands_to_collect_system_and_hardware_information/index.html&pic=http://kidnet.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -473,7 +473,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker系列(一):安装&url=http://kidnet.github.io/2017/09/19/docker-install/index.html&via=Jason" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=采集系统和硬件信息的10个命令&url=http://kidnet.github.io/2018/07/03/10_useful_commands_to_collect_system_and_hardware_information/index.html&via=Jason" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -482,7 +482,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://kidnet.github.io/2017/09/19/docker-install/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://kidnet.github.io/2018/07/03/10_useful_commands_to_collect_system_and_hardware_information/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://kidnet.github.io/2017/09/19/docker-install/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://kidnet.github.io/2018/07/03/10_useful_commands_to_collect_system_and_hardware_information/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -515,32 +515,359 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近在公司内部搭建Docker作为测试环境，准备将搭建的过程记录下来。</p>
-<h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装:"></a>yum安装:</h2><h3 id="安装docker源"><a href="#安装docker源" class="headerlink" title="安装docker源"></a>安装docker源</h3><p>使用yum安装doucker之前，需要先设置docker的yum源。</p>
-<p>1.安装源需要的包: <code>yum-utils</code>, <code>yum-config-manager</code>, <code>device-mapper-persistent-data</code>, <code>lvm2</code>及<code>devicemapper</code></p>
-<pre><code>$ yum install -y yum-utils \  
-device-mapper-persistent-data \  
-lvm2
-</code></pre><p>2.安装docker源  </p>
-<pre><code>$ yum-config-manager \  
---add-repo \  
-https://download.docker.com/linux/centos/docker-ce.repo
-</code></pre><h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><p>1.安装最新版本docker</p>
-<pre><code>$ yum install docker-ce
-</code></pre><p>2.启动docker</p>
-<pre><code>$ systemctl start docker
-</code></pre><p>3.验证docker是否安装正确</p>
-<pre><code>$ docker run hello-world
-</code></pre><h2 id="二进制包安装"><a href="#二进制包安装" class="headerlink" title="二进制包安装"></a>二进制包安装</h2><h3 id="安装静态二进制"><a href="#安装静态二进制" class="headerlink" title="安装静态二进制"></a>安装静态二进制</h3><p>1.下载静态二进制包。下载地址:<a href="https://download.docker.com/linux/static/stable/x86_64/" target="_blank" rel="external">https://download.docker.com/linux/static/stable/x86_64/</a></p>
-<p>2.解压缩tar包  </p>
-<pre><code>$ tar -xzvf /path/to/&lt;FILE&gt;.tar.gz
-</code></pre><p>3.将二进制文件拷贝至系统命令目录，如<code>/usr/bin</code>  </p>
-<pre><code>$ cp docker/* /usr/bin/
-</code></pre><p>4.启动Docker daemon:  </p>
-<pre><code>$ dockerd &amp;
-</code></pre><p>5.验证docker是否安装正确  </p>
-<pre><code>$ docker run hello-world
-</code></pre>
+        <blockquote>
+<p>原文地址: <a href="https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-linux/" target="_blank" rel="external">https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-linux/</a></p>
+</blockquote>
+<p>了解你运行中的Linux系统的硬件组件是一个很好的习惯，这可以帮助你去处理安装软件包或驱动程序时遇到的兼容性问题。 因此在此篇文章中，我们将看到一些实用的命令，可以帮助你提取有关Linux系统和硬件组件的信息。</p>
+<h2 id="1-如何查看Linux系统信息"><a href="#1-如何查看Linux系统信息" class="headerlink" title="1. 如何查看Linux系统信息"></a>1. 如何查看Linux系统信息</h2><p>如果仅是查看系统名称，可以直接使用uname命令，不需要任何选项，或使用<code>uname -s</code>命令打印系统的内核名称。</p>
+<pre><code>tecmint@tecmint ~ $ uname
+Linux
+</code></pre><p>要查看网络主机名，使用uname命令的<code>-n</code>选项，如下所示。</p>
+<pre><code>tecmint@tecmint ~ $ uname -n
+tecmint.com
+</code></pre><p>要获取关于内核版本的信息，使用<code>-v</code>选项。</p>
+<pre><code>tecmint@tecmint ~ $ uname -v
+#64-Ubuntu SMP Mon Sep 22 21:28:38 UTC 2014
+</code></pre><p>要获取内核发行版本的信息，使用<code>-r</code>选项。</p>
+<pre><code>tecmint@tecmint ~ $ uname -r
+3.13.0-37-generic
+</code></pre><p>打印主机硬件平台的类型，使用<code>-m</code>选项。</p>
+<pre><code>tecmint@tecmint ~ $ uname -m
+x86_64
+</code></pre><p>以上所有信息可以使用<code>uname -a</code>命令一次打印出来，如下所示。</p>
+<pre><code>tecmint@tecmint ~ $ uname -a
+Linux tecmint.com 3.13.0-37-generic #64-Ubuntu SMP Mon Sep 22 21:28:38 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre><h2 id="2-如何查看Linux系统硬件信息"><a href="#2-如何查看Linux系统硬件信息" class="headerlink" title="2. 如何查看Linux系统硬件信息"></a>2. 如何查看Linux系统硬件信息</h2><p>在这你可以使用<strong>lshw工具</strong>去收集大部分硬件组件信息，如<strong>cpu</strong>, <strong>磁盘</strong>， <strong>内存</strong>， <strong>usb控制器</strong>等信息。  </p>
+<p><strong>lshw</strong>是一个相对小型的工具，它有一些选项是你在提取信息的时候可以使用的。 这些信息是<strong>lshw</strong>从不同的<strong>/proc</strong>文件中收集的。</p>
+<p><strong><font color="#DC143C">注意</font></strong>: 记住<strong>lshw</strong>命令是通过超级用户(<strong>root</strong>)或者<strong>sudo</strong>用户来执行的。</p>
+<p>运行这个命令来打印Linux系统硬件信息:</p>
+<pre><code>tecmint@tecmint ~ $ sudo lshw
+tecmint.com               
+description: Notebook
+product: 20354 (LENOVO_MT_20354_BU_idea_FM_Lenovo Z50-70)
+vendor: LENOVO
+version: Lenovo Z50-70
+serial: 1037407803441
+width: 64 bits
+capabilities: smbios-2.7 dmi-2.7 vsyscall32
+configuration: administrator_password=disabled boot=normal chassis=notebook family=IDEAPAD frontpanel_password=disabled keyboard_password=disabled power-on_password=disabled sku=LENOVO_MT_20354_BU_idea_FM_Lenovo Z50-70 uuid=E4B1D229-D237-E411-9F6E-28D244EBBD98
+*-core
+description: Motherboard
+product: Lancer 5A5
+vendor: LENOVO
+physical id: 0
+version: 31900059WIN
+serial: YB06377069
+slot: Type2 - Board Chassis Location
+*-firmware
+description: BIOS
+vendor: LENOVO
+physical id: 0
+version: 9BCN26WW
+date: 07/31/2014
+size: 128KiB
+capacity: 4032KiB
+capabilities: pci upgrade shadowing cdboot bootselect edd int13floppynec int13floppytoshiba int13floppy360 int13floppy1200 int13floppy720 int13floppy2880 int9keyboard int10video acpi usb biosbootspecification uefi
+......
+</code></pre><p>你可以通过<code>-short</code>选项来打印一个硬件信息的总结。</p>
+<pre><code>tecmint@tecmint ~ $ sudo lshw -short
+H/W path       Device      Class          Description
+=====================================================
+system         20354 (LENOVO_MT_20354_BU_idea_FM_Lenovo Z50-70)
+/0                         bus            Lancer 5A5
+/0/0                       memory         128KiB BIOS
+/0/4                       processor      Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz
+/0/4/b                     memory         32KiB L1 cache
+/0/4/c                     memory         256KiB L2 cache
+/0/4/d                     memory         3MiB L3 cache
+/0/a                       memory         32KiB L1 cache
+/0/12                      memory         8GiB System Memory
+/0/12/0                    memory         DIMM [empty]
+/0/12/1                    memory         DIMM [empty]
+/0/12/2                    memory         8GiB SODIMM DDR3 Synchronous 1600 MHz (0.6 ns)
+/0/12/3                    memory         DIMM [empty]
+/0/100                     bridge         Haswell-ULT DRAM Controller
+/0/100/2                   display        Haswell-ULT Integrated Graphics Controller
+/0/100/3                   multimedia     Haswell-ULT HD Audio Controller
+...
+</code></pre><p>如果你想生成一个输出作为html文件，你可以使用<code>-html</code>选项。</p>
+<pre><code>tecmint@tecmint ~ $ sudo lshw -html &gt; lshw.html
+</code></pre><p><img src="Generate-Linux-Hardware-Information.png" alt="Generate-Linux-Hardware-Information"></p>
+<h2 id="3-如何显示CPU信息"><a href="#3-如何显示CPU信息" class="headerlink" title="3. 如何显示CPU信息"></a>3. 如何显示CPU信息</h2><p>要显示CPU的信息，使用lscpu命令，它会显示出你CPU的架构信息，如CPU的数量，cores，CPU系列型号，CPU的缓存，线程等，这些信息都是<strong>lscpu</strong>命令从<strong>sysfs</strong>和<strong>/proc/cpuinfo</strong>获取的。</p>
+<pre><code>tecmint@tecmint ~ $ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    2
+Core(s) per socket:    2
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 69
+Stepping:              1
+CPU MHz:               768.000
+BogoMIPS:              4788.72
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              3072K
+NUMA node0 CPU(s):     0-3
+</code></pre><h2 id="4-如何收集Linux块设备信息"><a href="#4-如何收集Linux块设备信息" class="headerlink" title="4. 如何收集Linux块设备信息"></a>4. 如何收集Linux块设备信息</h2><p>块设备是存储设备，如硬盘，闪存等。 <strong>lsblk</strong>命令是用于生成块设备报告的命令，如下：</p>
+<pre><code>tecmint@tecmint ~ $ lsblk
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda       8:0    0 931.5G  0 disk 
+├─sda1    8:1    0  1000M  0 part 
+├─sda2    8:2    0   260M  0 part /boot/efi
+├─sda3    8:3    0  1000M  0 part 
+├─sda4    8:4    0   128M  0 part 
+├─sda5    8:5    0 557.1G  0 part 
+├─sda6    8:6    0    25G  0 part 
+├─sda7    8:7    0  14.7G  0 part 
+├─sda8    8:8    0     1M  0 part 
+├─sda9    8:9    0 324.5G  0 part /
+└─sda10   8:10   0   7.9G  0 part [SWAP]
+sr0      11:0    1  1024M  0 rom
+</code></pre><p>如果你想查看所有你系统中的块设备，使用<code>-a</code>选项。</p>
+<pre><code>tecmint@tecmint ~ $ lsblk -a
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda       8:0    0 931.5G  0 disk 
+├─sda1    8:1    0  1000M  0 part 
+├─sda2    8:2    0   260M  0 part /boot/efi
+├─sda3    8:3    0  1000M  0 part 
+├─sda4    8:4    0   128M  0 part 
+├─sda5    8:5    0 557.1G  0 part 
+├─sda6    8:6    0    25G  0 part 
+├─sda7    8:7    0  14.7G  0 part 
+├─sda8    8:8    0     1M  0 part 
+├─sda9    8:9    0 324.5G  0 part /
+└─sda10   8:10   0   7.9G  0 part [SWAP]
+sdb       8:16   1         0 disk 
+sr0      11:0    1  1024M  0 rom  
+ram0      1:0    0    64M  0 disk 
+ram1      1:1    0    64M  0 disk 
+ram2      1:2    0    64M  0 disk 
+ram3      1:3    0    64M  0 disk 
+ram4      1:4    0    64M  0 disk 
+ram5      1:5    0    64M  0 disk 
+ram6      1:6    0    64M  0 disk 
+ram7      1:7    0    64M  0 disk 
+ram8      1:8    0    64M  0 disk 
+ram9      1:9    0    64M  0 disk 
+loop0     7:0    0         0 loop 
+loop1     7:1    0         0 loop 
+loop2     7:2    0         0 loop 
+loop3     7:3    0         0 loop 
+loop4     7:4    0         0 loop 
+loop5     7:5    0         0 loop 
+loop6     7:6    0         0 loop 
+loop7     7:7    0         0 loop 
+ram10     1:10   0    64M  0 disk 
+ram11     1:11   0    64M  0 disk 
+ram12     1:12   0    64M  0 disk 
+ram13     1:13   0    64M  0 disk 
+ram14     1:14   0    64M  0 disk 
+ram15     1:15   0    64M  0 disk 
+</code></pre><h2 id="5-如何打印USB控制器的信息"><a href="#5-如何打印USB控制器的信息" class="headerlink" title="5. 如何打印USB控制器的信息"></a>5. 如何打印USB控制器的信息</h2><p><strong>lsusb</strong>命令可以生成USB控制器及所有连接到控制设备的信息报告。</p>
+<pre><code>tecmint@tecmint ~ $ lsusb
+Bus 001 Device 002: ID 8087:8000 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 005: ID 0bda:b728 Realtek Semiconductor Corp. 
+Bus 002 Device 004: ID 5986:0249 Acer, Inc 
+Bus 002 Device 003: ID 0bda:0129 Realtek Semiconductor Corp. RTS5129 Card Reader Controller
+Bus 002 Device 002: ID 045e:00cb Microsoft Corp. Basic Optical Mouse v2.0
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</code></pre><p>你还可以使用<code>-v</code>选项来生成每个USB设备的详细信息。</p>
+<pre><code>tecmint@tecmint ~ $ lsusb -v
+</code></pre><h2 id="6-如何打印PCI设备的信息"><a href="#6-如何打印PCI设备的信息" class="headerlink" title="6. 如何打印PCI设备的信息"></a>6. 如何打印PCI设备的信息</h2><p>PCI设备可能包括usb端口，显卡，网络适配器等。 <strong>lspci</strong>工具用于生成关于所有安装在系统上的设备及连接他们的设备的PCI控制器的信息。</p>
+<p>运行以下命令打印关于PCI设备的信息。</p>
+<pre><code>tecmint@tecmint ~ $ lspci
+00:00.0 Host bridge: Intel Corporation Haswell-ULT DRAM Controller (rev 0b)
+00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b)
+00:03.0 Audio device: Intel Corporation Haswell-ULT HD Audio Controller (rev 0b)
+00:14.0 USB controller: Intel Corporation Lynx Point-LP USB xHCI HC (rev 04)
+00:16.0 Communication controller: Intel Corporation Lynx Point-LP HECI #0 (rev 04)
+00:1b.0 Audio device: Intel Corporation Lynx Point-LP HD Audio Controller (rev 04)
+00:1c.0 PCI bridge: Intel Corporation Lynx Point-LP PCI Express Root Port 3 (rev e4)
+00:1c.3 PCI bridge: Intel Corporation Lynx Point-LP PCI Express Root Port 4 (rev e4)
+00:1c.4 PCI bridge: Intel Corporation Lynx Point-LP PCI Express Root Port 5 (rev e4)
+00:1d.0 USB controller: Intel Corporation Lynx Point-LP USB EHCI #1 (rev 04)
+00:1f.0 ISA bridge: Intel Corporation Lynx Point-LP LPC Controller (rev 04)
+00:1f.2 SATA controller: Intel Corporation Lynx Point-LP SATA Controller 1 [AHCI mode] (rev 04)
+00:1f.3 SMBus: Intel Corporation Lynx Point-LP SMBus Controller (rev 04)
+01:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 10)
+02:00.0 Network controller: Realtek Semiconductor Co., Ltd. RTL8723BE PCIe Wireless Network Adapter
+03:00.0 3D controller: NVIDIA Corporation GM108M [GeForce 840M] (rev a2)
+</code></pre><p>使用<code>-t</code>参数产生一个树形格式的输出。</p>
+<pre><code>tecmint@tecmint ~ $ lspci -t
+-[0000:00]-+-00.0
++-02.0
++-03.0
++-14.0
++-16.0
++-1b.0
++-1c.0-[01]----00.0
++-1c.3-[02]----00.0
++-1c.4-[03]----00.0
++-1d.0
++-1f.0
++-1f.2
+\-1f.3
+</code></pre><p>使用<code>-v</code>参数产生每个连接设备的详细信息。</p>
+<pre><code>tecmint@tecmint ~ $ lspci -v
+00:00.0 Host bridge: Intel Corporation Haswell-ULT DRAM Controller (rev 0b)
+Subsystem: Lenovo Device 3978
+Flags: bus master, fast devsel, latency 0
+Capabilities: 
+00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b) (prog-if 00 [VGA controller])
+Subsystem: Lenovo Device 380d
+Flags: bus master, fast devsel, latency 0, IRQ 62
+Memory at c3000000 (64-bit, non-prefetchable) [size=4M]
+Memory at d0000000 (64-bit, prefetchable) [size=256M]
+I/O ports at 6000 [size=64]
+Expansion ROM at  [disabled]
+Capabilities: 
+Kernel driver in use: i915
+.....
+</code></pre><h2 id="7-如何打印SCSI设备的信息"><a href="#7-如何打印SCSI设备的信息" class="headerlink" title="7. 如何打印SCSI设备的信息"></a>7. 如何打印SCSI设备的信息</h2><p>使用<strong>lsscsi</strong>命令显示所有scsi/sata设备。如果系统中没有安装此命令，运行如下命令来安装它。</p>
+<pre><code>$ sudo apt-get install lsscsi        [on Debian derivatives]
+# yum install lsscsi                 [On RedHat based systems]
+# dnf install lsscsi                 [On Fedora 21+ Onwards]
+</code></pre><p>安装之后，像如下所示来运行<strong>lsscsi</strong>命令:</p>
+<pre><code>tecmint@tecmint ~ $ lsscsi
+[0:0:0:0]    disk    ATA      ST1000LM024 HN-M 2BA3  /dev/sda 
+[1:0:0:0]    cd/dvd  PLDS     DVD-RW DA8A5SH   RL61  /dev/sr0 
+[4:0:0:0]    disk    Generic- xD/SD/M.S.       1.00  /dev/sdb 
+</code></pre><p>使用<code>-s</code>参数显示设备容量。</p>
+<pre><code>tecmint@tecmint ~ $ lsscsi -s
+[0:0:0:0]    disk    ATA      ST1000LM024 HN-M 2BA3  /dev/sda   1.00TB
+[1:0:0:0]    cd/dvd  PLDS     DVD-RW DA8A5SH   RL61  /dev/sr0        -
+[4:0:0:0]    disk    Generic- xD/SD/M.S.       1.00  /dev/sdb        -
+</code></pre><h2 id="8-如何打印关于SATA设备的信息"><a href="#8-如何打印关于SATA设备的信息" class="headerlink" title="8. 如何打印关于SATA设备的信息"></a>8. 如何打印关于SATA设备的信息</h2><p>如下所示，使用<strong>hdparm</strong>工具可以找到你系统中sata设备的一些信息。 在下面这个例子中， 我们用了系统中块设备<strong>/dev/sda1</strong>。</p>
+<pre><code>tecmint@tecmint ~ $ sudo hdparm /dev/sda1
+/dev/sda1:
+multcount     =  0 (off)
+IO_support    =  1 (32-bit)
+readonly      =  0 (off)
+readahead     = 256 (on)
+geometry      = 56065/255/63, sectors = 2048000, start = 2048
+</code></pre><p>要打印关于设备的柱面，磁头，扇区，大小和设备的起始偏移信息等，使用<code>-g</code>参数。</p>
+<pre><code>tecmint@tecmint ~ $ sudo hdparm -g /dev/sda1
+/dev/sda1:
+geometry      = 56065/255/63, sectors = 2048000, start = 2048
+</code></pre><h2 id="9-如何打印Linux文件系统的信息"><a href="#9-如何打印Linux文件系统的信息" class="headerlink" title="9. 如何打印Linux文件系统的信息"></a>9. 如何打印Linux文件系统的信息</h2><p>使用<strong>fdisk</strong>命令来获取文件系统的分区信息。 尽管<strong>fdisk</strong>命令的主要功能是修改文件系统分区，但它也可以用于去显示在系统中不同分区的信息。</p>
+<pre><code>tecmint@tecmint ~ $ sudo fdisk -l
+WARNING: GPT (GUID Partition Table) detected on &apos;/dev/sda&apos;! The util fdisk doesn&apos;t support GPT. Use GNU Parted.
+Disk /dev/sda: 1000.2 GB, 1000204886016 bytes
+255 heads, 63 sectors/track, 121601 cylinders, total 1953525168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disk identifier: 0xcee8ad92
+Device Boot      Start         End      Blocks   Id  System
+/dev/sda1               1  1953525167   976762583+  ee  GPT
+Partition 1 does not start on physical sector boundary.
+</code></pre><h2 id="10-如何提取硬件组件的信息"><a href="#10-如何提取硬件组件的信息" class="headerlink" title="10. 如何提取硬件组件的信息"></a>10. 如何提取硬件组件的信息</h2><p>你可以使用<strong>dmidecode_</strong>程序通过从DMI表中读取数据来提取硬件信息。</p>
+<p>要打印关于内存信息，运行以下命令，并且要以超级管理员的权限运行。</p>
+<pre><code>tecmint@tecmint ~ $ sudo dmidecode -t memory
+# dmidecode 2.12
+# SMBIOS entry point at 0xaaebef98
+SMBIOS 2.7 present.
+Handle 0x0005, DMI type 5, 24 bytes
+Memory Controller Information
+Error Detecting Method: None
+Error Correcting Capabilities:
+None
+Supported Interleave: One-way Interleave
+Current Interleave: One-way Interleave
+Maximum Memory Module Size: 8192 MB
+Maximum Total Memory Size: 32768 MB
+Supported Speeds:
+Other
+Supported Memory Types:
+Other
+Memory Module Voltage: Unknown
+Associated Memory Slots: 4
+0x0006
+0x0007
+0x0008
+0x0009
+Enabled Error Correcting Capabilities:
+None
+...
+</code></pre><p>运行以下命令打印系统相关信息。</p>
+<pre><code>tecmint@tecmint ~ $ sudo dmidecode -t system
+# dmidecode 2.12
+# SMBIOS entry point at 0xaaebef98
+SMBIOS 2.7 present.
+Handle 0x0001, DMI type 1, 27 bytes
+System Information
+Manufacturer: LENOVO
+Product Name: 20354
+Version: Lenovo Z50-70
+Serial Number: 1037407803441
+UUID: 29D2B1E4-37D2-11E4-9F6E-28D244EBBD98
+Wake-up Type: Power Switch
+SKU Number: LENOVO_MT_20354_BU_idea_FM_Lenovo Z50-70
+Family: IDEAPAD
+...
+</code></pre><p>运行以下命令打印BIOS相关信息。</p>
+<pre><code>tecmint@tecmint ~ $ sudo dmidecode -t bios
+# dmidecode 2.12
+# SMBIOS entry point at 0xaaebef98
+SMBIOS 2.7 present.
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+Vendor: LENOVO
+Version: 9BCN26WW
+Release Date: 07/31/2014
+Address: 0xE0000
+Runtime Size: 128 kB
+ROM Size: 4096 kB
+Characteristics:
+PCI is supported
+BIOS is upgradeable
+BIOS shadowing is allowed
+Boot from CD is supported
+Selectable boot is supported
+EDD is supported
+Japanese floppy for NEC 9800 1.2 MB is supported (int 13h)
+Japanese floppy for Toshiba 1.2 MB is supported (int 13h)
+5.25&quot;/360 kB floppy services are supported (int 13h)
+5.25&quot;/1.2 MB floppy services are supported (int 13h)
+3.5&quot;/720 kB floppy services are supported (int 13h)
+3.5&quot;/2.88 MB floppy services are supported (int 13h)
+8042 keyboard services are supported (int 9h)
+CGA/mono video services are supported (int 10h)
+ACPI is supported
+USB legacy is supported
+BIOS boot specification is supported
+Targeted content distribution is supported
+UEFI is supported
+BIOS Revision: 0.26
+Firmware Revision: 0.26
+...
+</code></pre><p>运行以下命令打印关于处理器的信息。</p>
+<pre><code>tecmint@tecmint ~ $ sudo dmidecode -t processor
+# dmidecode 2.12
+# SMBIOS entry point at 0xaaebef98
+SMBIOS 2.7 present.
+Handle 0x0004, DMI type 4, 42 bytes
+Processor Information
+Socket Designation: U3E1
+Type: Central Processor
+Family: Core i5
+Manufacturer: Intel(R) Corporation
+ID: 51 06 04 00 FF FB EB BF
+Signature: Type 0, Family 6, Model 69, Stepping 1
+Flags:
+...
+</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>除了以上的命令，还有很多方法可以来获取系统硬件组件信息。 大部分的命令是从<strong>/proc</strong>目录下的文件来提取的系统信息。</p>
+
         
     
 
@@ -560,21 +887,13 @@ https://download.docker.com/linux/centos/docker-ce.repo
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/29/docker-image-management/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/09/11/markdown/" id="post_nav-older" class="next-content">
+        <a href="/2018/07/02/netdata/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
